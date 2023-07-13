@@ -1,6 +1,0 @@
-# ninja log v5
-1	3997	1686106635843752248	CMakeFiles/proto_share.dir/weibo.grpc.pb.cc.o	2f8dbed3b9b6535b
-4048	8360	1686106640191769883	client	97ae1f84f6be0a64
-3998	4048	1686106635887752424	libproto_share.a	e1087c33588b5fb5
-1	1974	1686106633823744216	CMakeFiles/proto_share.dir/weibo.pb.cc.o	15421849a6b38fc6
-2	3778	1686106635627751385	CMakeFiles/client.dir/client.cpp.o	84597dd86f3655f3
