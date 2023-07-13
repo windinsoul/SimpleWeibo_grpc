@@ -25,7 +25,12 @@ static const char* Weibo_method_names[] = {
   "/weibo.Weibo/Regist",
   "/weibo.Weibo/Login",
   "/weibo.Weibo/PublishPost",
+  "/weibo.Weibo/Follow",
+  "/weibo.Weibo/CommentOnPost",
+  "/weibo.Weibo/Like",
   "/weibo.Weibo/GetHot",
+  "/weibo.Weibo/GetHotTopic",
+  "/weibo.Weibo/GetPostByTopicId",
   "/weibo.Weibo/GetPostByUserId",
   "/weibo.Weibo/PostFeedByRecommend",
   "/weibo.Weibo/PostFeedByFollow",
@@ -41,10 +46,15 @@ Weibo::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, con
   : channel_(channel), rpcmethod_Regist_(Weibo_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_Login_(Weibo_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PublishPost_(Weibo_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetHot_(Weibo_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_GetPostByUserId_(Weibo_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_PostFeedByRecommend_(Weibo_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_PostFeedByFollow_(Weibo_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_Follow_(Weibo_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CommentOnPost_(Weibo_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Like_(Weibo_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetHot_(Weibo_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetHotTopic_(Weibo_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetPostByTopicId_(Weibo_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetPostByUserId_(Weibo_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_PostFeedByRecommend_(Weibo_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_PostFeedByFollow_(Weibo_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status Weibo::Stub::Regist(::grpc::ClientContext* context, const ::weibo::RegistReq& request, ::weibo::RegistRes* response) {
@@ -116,6 +126,75 @@ void Weibo::Stub::async::PublishPost(::grpc::ClientContext* context, const ::wei
   return result;
 }
 
+::grpc::Status Weibo::Stub::Follow(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::weibo::Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::weibo::FollowReq, ::weibo::Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Follow_, context, request, response);
+}
+
+void Weibo::Stub::async::Follow(::grpc::ClientContext* context, const ::weibo::FollowReq* request, ::weibo::Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::weibo::FollowReq, ::weibo::Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Follow_, context, request, response, std::move(f));
+}
+
+void Weibo::Stub::async::Follow(::grpc::ClientContext* context, const ::weibo::FollowReq* request, ::weibo::Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Follow_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::weibo::Response>* Weibo::Stub::PrepareAsyncFollowRaw(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::weibo::Response, ::weibo::FollowReq, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Follow_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::weibo::Response>* Weibo::Stub::AsyncFollowRaw(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncFollowRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Weibo::Stub::CommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::weibo::Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::weibo::CommentReq, ::weibo::Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CommentOnPost_, context, request, response);
+}
+
+void Weibo::Stub::async::CommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq* request, ::weibo::Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::weibo::CommentReq, ::weibo::Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CommentOnPost_, context, request, response, std::move(f));
+}
+
+void Weibo::Stub::async::CommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq* request, ::weibo::Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CommentOnPost_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::weibo::Response>* Weibo::Stub::PrepareAsyncCommentOnPostRaw(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::weibo::Response, ::weibo::CommentReq, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CommentOnPost_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::weibo::Response>* Weibo::Stub::AsyncCommentOnPostRaw(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCommentOnPostRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Weibo::Stub::Like(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::weibo::Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::weibo::LikeReq, ::weibo::Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Like_, context, request, response);
+}
+
+void Weibo::Stub::async::Like(::grpc::ClientContext* context, const ::weibo::LikeReq* request, ::weibo::Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::weibo::LikeReq, ::weibo::Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Like_, context, request, response, std::move(f));
+}
+
+void Weibo::Stub::async::Like(::grpc::ClientContext* context, const ::weibo::LikeReq* request, ::weibo::Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Like_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::weibo::Response>* Weibo::Stub::PrepareAsyncLikeRaw(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::weibo::Response, ::weibo::LikeReq, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Like_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::weibo::Response>* Weibo::Stub::AsyncLikeRaw(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncLikeRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::ClientReader< ::weibo::PostRes>* Weibo::Stub::GetHotRaw(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request) {
   return ::grpc::internal::ClientReaderFactory< ::weibo::PostRes>::Create(channel_.get(), rpcmethod_GetHot_, context, request);
 }
@@ -130,6 +209,38 @@ void Weibo::Stub::async::GetHot(::grpc::ClientContext* context, const ::weibo::G
 
 ::grpc::ClientAsyncReader< ::weibo::PostRes>* Weibo::Stub::PrepareAsyncGetHotRaw(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncReaderFactory< ::weibo::PostRes>::Create(channel_.get(), cq, rpcmethod_GetHot_, context, request, false, nullptr);
+}
+
+::grpc::ClientReader< ::weibo::HotTopicRes>* Weibo::Stub::GetHotTopicRaw(::grpc::ClientContext* context, const ::weibo::Blank& request) {
+  return ::grpc::internal::ClientReaderFactory< ::weibo::HotTopicRes>::Create(channel_.get(), rpcmethod_GetHotTopic_, context, request);
+}
+
+void Weibo::Stub::async::GetHotTopic(::grpc::ClientContext* context, const ::weibo::Blank* request, ::grpc::ClientReadReactor< ::weibo::HotTopicRes>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::weibo::HotTopicRes>::Create(stub_->channel_.get(), stub_->rpcmethod_GetHotTopic_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::weibo::HotTopicRes>* Weibo::Stub::AsyncGetHotTopicRaw(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::weibo::HotTopicRes>::Create(channel_.get(), cq, rpcmethod_GetHotTopic_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::weibo::HotTopicRes>* Weibo::Stub::PrepareAsyncGetHotTopicRaw(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::weibo::HotTopicRes>::Create(channel_.get(), cq, rpcmethod_GetHotTopic_, context, request, false, nullptr);
+}
+
+::grpc::ClientReader< ::weibo::PostRes>* Weibo::Stub::GetPostByTopicIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request) {
+  return ::grpc::internal::ClientReaderFactory< ::weibo::PostRes>::Create(channel_.get(), rpcmethod_GetPostByTopicId_, context, request);
+}
+
+void Weibo::Stub::async::GetPostByTopicId(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::weibo::PostRes>::Create(stub_->channel_.get(), stub_->rpcmethod_GetPostByTopicId_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::weibo::PostRes>* Weibo::Stub::AsyncGetPostByTopicIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::weibo::PostRes>::Create(channel_.get(), cq, rpcmethod_GetPostByTopicId_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::weibo::PostRes>* Weibo::Stub::PrepareAsyncGetPostByTopicIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::weibo::PostRes>::Create(channel_.get(), cq, rpcmethod_GetPostByTopicId_, context, request, false, nullptr);
 }
 
 ::grpc::ClientReader< ::weibo::PostRes>* Weibo::Stub::GetPostByUserIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq& request) {
@@ -213,6 +324,36 @@ Weibo::Service::Service() {
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Weibo_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Weibo::Service, ::weibo::FollowReq, ::weibo::Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Weibo::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::weibo::FollowReq* req,
+             ::weibo::Response* resp) {
+               return service->Follow(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Weibo_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Weibo::Service, ::weibo::CommentReq, ::weibo::Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Weibo::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::weibo::CommentReq* req,
+             ::weibo::Response* resp) {
+               return service->CommentOnPost(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Weibo_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Weibo::Service, ::weibo::LikeReq, ::weibo::Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Weibo::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::weibo::LikeReq* req,
+             ::weibo::Response* resp) {
+               return service->Like(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Weibo_method_names[6],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Weibo::Service, ::weibo::GetHotPostReq, ::weibo::PostRes>(
           [](Weibo::Service* service,
@@ -222,7 +363,27 @@ Weibo::Service::Service() {
                return service->GetHot(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Weibo_method_names[4],
+      Weibo_method_names[7],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< Weibo::Service, ::weibo::Blank, ::weibo::HotTopicRes>(
+          [](Weibo::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::weibo::Blank* req,
+             ::grpc::ServerWriter<::weibo::HotTopicRes>* writer) {
+               return service->GetHotTopic(ctx, req, writer);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Weibo_method_names[8],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< Weibo::Service, ::weibo::GetPostByTopicIdReq, ::weibo::PostRes>(
+          [](Weibo::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::weibo::GetPostByTopicIdReq* req,
+             ::grpc::ServerWriter<::weibo::PostRes>* writer) {
+               return service->GetPostByTopicId(ctx, req, writer);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Weibo_method_names[9],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Weibo::Service, ::weibo::GetPostByUserIdReq, ::weibo::PostRes>(
           [](Weibo::Service* service,
@@ -232,7 +393,7 @@ Weibo::Service::Service() {
                return service->GetPostByUserId(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Weibo_method_names[5],
+      Weibo_method_names[10],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Weibo::Service, ::weibo::PostFeedReq, ::weibo::PostRes>(
           [](Weibo::Service* service,
@@ -242,7 +403,7 @@ Weibo::Service::Service() {
                return service->PostFeedByRecommend(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Weibo_method_names[6],
+      Weibo_method_names[11],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< Weibo::Service, ::weibo::PostFeedReq, ::weibo::PostRes>(
           [](Weibo::Service* service,
@@ -277,7 +438,42 @@ Weibo::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status Weibo::Service::Follow(::grpc::ServerContext* context, const ::weibo::FollowReq* request, ::weibo::Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Weibo::Service::CommentOnPost(::grpc::ServerContext* context, const ::weibo::CommentReq* request, ::weibo::Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Weibo::Service::Like(::grpc::ServerContext* context, const ::weibo::LikeReq* request, ::weibo::Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status Weibo::Service::GetHot(::grpc::ServerContext* context, const ::weibo::GetHotPostReq* request, ::grpc::ServerWriter< ::weibo::PostRes>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Weibo::Service::GetHotTopic(::grpc::ServerContext* context, const ::weibo::Blank* request, ::grpc::ServerWriter< ::weibo::HotTopicRes>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Weibo::Service::GetPostByTopicId(::grpc::ServerContext* context, const ::weibo::GetPostByTopicIdReq* request, ::grpc::ServerWriter< ::weibo::PostRes>* writer) {
   (void) context;
   (void) request;
   (void) writer;

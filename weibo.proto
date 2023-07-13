@@ -1,16 +1,58 @@
 syntax="proto3";
 package weibo;
-
+//protoc -I ./ --cpp_out=. weibo.proto
+//protoc -I ./ --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` weibo.proto
 service Weibo{
   rpc Regist(RegistReq)returns(RegistRes){}
   rpc Login(LoginReq)returns(LoginRes){}
   rpc PublishPost(PublishPostReq)returns(PublishPostRes){}
+  rpc Follow(FollowReq)returns(Response){}
+  rpc CommentOnPost(CommentReq)returns(Response){}
+  rpc Like(LikeReq)returns(Response){}
   rpc GetHot(GetHotPostReq)returns(stream PostRes){}
+  rpc GetHotTopic(Blank)returns(stream HotTopicRes){}
+  rpc GetPostByTopicId(GetPostByTopicIdReq)returns(stream PostRes){}
   rpc GetPostByUserId(GetPostByUserIdReq)returns(stream PostRes){}
   rpc PostFeedByRecommend(PostFeedReq)returns(stream PostRes){}
   rpc PostFeedByFollow(PostFeedReq)returns(stream PostRes){}
-//  rpc PublishPost
-//  rpc GetMyFollowPostFeed
+}
+
+message GetPostByTopicIdReq{
+  int32 topic_id=1;
+}
+
+message Blank{
+
+}
+
+message HotTopicRes{
+  int32 topic_id=1;
+  string topic_name=2;
+}
+
+message LikeReq{
+  string token=1;
+  int32 post_id=2;
+}
+
+message CommentReq{
+  string token=1;
+  string comment_text=2;
+  int32 post_id=3;
+}
+
+message FollowReq{
+    string token=1;
+    int32 target_user_id=2;
+}
+
+message UserInfo{
+  string token=1;
+}
+
+message Response{
+  bool result_code=1;
+  string info=2;
 }
 
 message PublishPostRes{
@@ -54,6 +96,7 @@ message PostRes{
   string author_name=3;
   int32 trans_nums=4;
   string publish_time=5;
+  string topic_name=6;
 }
 
 message GetPostByUserIdReq{

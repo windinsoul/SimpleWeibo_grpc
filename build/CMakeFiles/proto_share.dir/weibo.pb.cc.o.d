@@ -200,6 +200,12 @@ CMakeFiles/proto_share.dir/weibo.pb.cc.o: \
  /usr/local/include/google/protobuf/arenaz_sampler.h \
  /usr/local/include/google/protobuf/arenastring.h \
  /usr/local/include/google/protobuf/explicitly_constructed.h \
+ /usr/local/include/google/protobuf/generated_message_bases.h \
+ /usr/local/include/google/protobuf/io/zero_copy_stream_impl.h \
+ /usr/local/include/google/protobuf/io/zero_copy_stream.h \
+ /usr/local/include/google/protobuf/io/zero_copy_stream_impl_lite.h \
+ /usr/local/include/google/protobuf/stubs/callback.h \
+ /usr/local/include/google/protobuf/stubs/stl_util.h \
  /usr/local/include/google/protobuf/generated_message_util.h \
  /usr/local/include/google/protobuf/stubs/once.h /usr/include/c++/8/mutex \
  /usr/include/c++/8/chrono /usr/include/c++/8/ratio \
@@ -215,20 +221,16 @@ CMakeFiles/proto_share.dir/weibo.pb.cc.o: \
  /usr/local/include/google/protobuf/repeated_ptr_field.h \
  /usr/local/include/google/protobuf/wire_format_lite.h \
  /usr/local/include/google/protobuf/stubs/casts.h \
- /usr/local/include/google/protobuf/generated_message_reflection.h \
+ /usr/local/include/google/protobuf/message.h \
  /usr/local/include/google/protobuf/descriptor.h \
  /usr/local/include/google/protobuf/stubs/mutex.h \
+ /usr/local/include/google/protobuf/generated_message_reflection.h \
  /usr/local/include/google/protobuf/generated_enum_reflection.h \
  /usr/local/include/google/protobuf/generated_enum_util.h \
  /usr/local/include/google/protobuf/unknown_field_set.h \
- /usr/local/include/google/protobuf/io/zero_copy_stream_impl_lite.h \
- /usr/local/include/google/protobuf/stubs/callback.h \
- /usr/local/include/google/protobuf/io/zero_copy_stream.h \
- /usr/local/include/google/protobuf/stubs/stl_util.h \
  /usr/local/include/google/protobuf/parse_context.h \
  /usr/local/include/google/protobuf/endian.h \
  /usr/local/include/google/protobuf/inlined_string_field.h \
- /usr/local/include/google/protobuf/message.h \
  /usr/local/include/google/protobuf/map.h /usr/include/c++/8/functional \
  /usr/include/c++/8/bits/std_function.h \
  /usr/local/include/google/protobuf/map_type_handler.h \

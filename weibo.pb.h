@@ -23,6 +23,7 @@
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/arena.h>
 #include <google/protobuf/arenastring.h>
+#include <google/protobuf/generated_message_bases.h>
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/metadata_lite.h>
 #include <google/protobuf/generated_message_reflection.h>
@@ -45,12 +46,30 @@ struct TableStruct_weibo_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_weibo_2eproto;
 namespace weibo {
+class Blank;
+struct BlankDefaultTypeInternal;
+extern BlankDefaultTypeInternal _Blank_default_instance_;
+class CommentReq;
+struct CommentReqDefaultTypeInternal;
+extern CommentReqDefaultTypeInternal _CommentReq_default_instance_;
+class FollowReq;
+struct FollowReqDefaultTypeInternal;
+extern FollowReqDefaultTypeInternal _FollowReq_default_instance_;
 class GetHotPostReq;
 struct GetHotPostReqDefaultTypeInternal;
 extern GetHotPostReqDefaultTypeInternal _GetHotPostReq_default_instance_;
+class GetPostByTopicIdReq;
+struct GetPostByTopicIdReqDefaultTypeInternal;
+extern GetPostByTopicIdReqDefaultTypeInternal _GetPostByTopicIdReq_default_instance_;
 class GetPostByUserIdReq;
 struct GetPostByUserIdReqDefaultTypeInternal;
 extern GetPostByUserIdReqDefaultTypeInternal _GetPostByUserIdReq_default_instance_;
+class HotTopicRes;
+struct HotTopicResDefaultTypeInternal;
+extern HotTopicResDefaultTypeInternal _HotTopicRes_default_instance_;
+class LikeReq;
+struct LikeReqDefaultTypeInternal;
+extern LikeReqDefaultTypeInternal _LikeReq_default_instance_;
 class LoginReq;
 struct LoginReqDefaultTypeInternal;
 extern LoginReqDefaultTypeInternal _LoginReq_default_instance_;
@@ -75,10 +94,22 @@ extern RegistReqDefaultTypeInternal _RegistReq_default_instance_;
 class RegistRes;
 struct RegistResDefaultTypeInternal;
 extern RegistResDefaultTypeInternal _RegistRes_default_instance_;
+class Response;
+struct ResponseDefaultTypeInternal;
+extern ResponseDefaultTypeInternal _Response_default_instance_;
+class UserInfo;
+struct UserInfoDefaultTypeInternal;
+extern UserInfoDefaultTypeInternal _UserInfo_default_instance_;
 }  // namespace weibo
 PROTOBUF_NAMESPACE_OPEN
+template<> ::weibo::Blank* Arena::CreateMaybeMessage<::weibo::Blank>(Arena*);
+template<> ::weibo::CommentReq* Arena::CreateMaybeMessage<::weibo::CommentReq>(Arena*);
+template<> ::weibo::FollowReq* Arena::CreateMaybeMessage<::weibo::FollowReq>(Arena*);
 template<> ::weibo::GetHotPostReq* Arena::CreateMaybeMessage<::weibo::GetHotPostReq>(Arena*);
+template<> ::weibo::GetPostByTopicIdReq* Arena::CreateMaybeMessage<::weibo::GetPostByTopicIdReq>(Arena*);
 template<> ::weibo::GetPostByUserIdReq* Arena::CreateMaybeMessage<::weibo::GetPostByUserIdReq>(Arena*);
+template<> ::weibo::HotTopicRes* Arena::CreateMaybeMessage<::weibo::HotTopicRes>(Arena*);
+template<> ::weibo::LikeReq* Arena::CreateMaybeMessage<::weibo::LikeReq>(Arena*);
 template<> ::weibo::LoginReq* Arena::CreateMaybeMessage<::weibo::LoginReq>(Arena*);
 template<> ::weibo::LoginRes* Arena::CreateMaybeMessage<::weibo::LoginRes>(Arena*);
 template<> ::weibo::PostFeedReq* Arena::CreateMaybeMessage<::weibo::PostFeedReq>(Arena*);
@@ -87,10 +118,1267 @@ template<> ::weibo::PublishPostReq* Arena::CreateMaybeMessage<::weibo::PublishPo
 template<> ::weibo::PublishPostRes* Arena::CreateMaybeMessage<::weibo::PublishPostRes>(Arena*);
 template<> ::weibo::RegistReq* Arena::CreateMaybeMessage<::weibo::RegistReq>(Arena*);
 template<> ::weibo::RegistRes* Arena::CreateMaybeMessage<::weibo::RegistRes>(Arena*);
+template<> ::weibo::Response* Arena::CreateMaybeMessage<::weibo::Response>(Arena*);
+template<> ::weibo::UserInfo* Arena::CreateMaybeMessage<::weibo::UserInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace weibo {
 
 // ===================================================================
+
+class GetPostByTopicIdReq final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:weibo.GetPostByTopicIdReq) */ {
+ public:
+  inline GetPostByTopicIdReq() : GetPostByTopicIdReq(nullptr) {}
+  ~GetPostByTopicIdReq() override;
+  explicit PROTOBUF_CONSTEXPR GetPostByTopicIdReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetPostByTopicIdReq(const GetPostByTopicIdReq& from);
+  GetPostByTopicIdReq(GetPostByTopicIdReq&& from) noexcept
+    : GetPostByTopicIdReq() {
+    *this = ::std::move(from);
+  }
+
+  inline GetPostByTopicIdReq& operator=(const GetPostByTopicIdReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetPostByTopicIdReq& operator=(GetPostByTopicIdReq&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetPostByTopicIdReq& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetPostByTopicIdReq* internal_default_instance() {
+    return reinterpret_cast<const GetPostByTopicIdReq*>(
+               &_GetPostByTopicIdReq_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(GetPostByTopicIdReq& a, GetPostByTopicIdReq& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetPostByTopicIdReq* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetPostByTopicIdReq* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetPostByTopicIdReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetPostByTopicIdReq>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetPostByTopicIdReq& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetPostByTopicIdReq& from) {
+    GetPostByTopicIdReq::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetPostByTopicIdReq* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "weibo.GetPostByTopicIdReq";
+  }
+  protected:
+  explicit GetPostByTopicIdReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTopicIdFieldNumber = 1,
+  };
+  // int32 topic_id = 1;
+  void clear_topic_id();
+  int32_t topic_id() const;
+  void set_topic_id(int32_t value);
+  private:
+  int32_t _internal_topic_id() const;
+  void _internal_set_topic_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:weibo.GetPostByTopicIdReq)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t topic_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_weibo_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Blank final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:weibo.Blank) */ {
+ public:
+  inline Blank() : Blank(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR Blank(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Blank(const Blank& from);
+  Blank(Blank&& from) noexcept
+    : Blank() {
+    *this = ::std::move(from);
+  }
+
+  inline Blank& operator=(const Blank& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Blank& operator=(Blank&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Blank& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Blank* internal_default_instance() {
+    return reinterpret_cast<const Blank*>(
+               &_Blank_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(Blank& a, Blank& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Blank* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Blank* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Blank* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Blank>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const Blank& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const Blank& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "weibo.Blank";
+  }
+  protected:
+  explicit Blank(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:weibo.Blank)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_weibo_2eproto;
+};
+// -------------------------------------------------------------------
+
+class HotTopicRes final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:weibo.HotTopicRes) */ {
+ public:
+  inline HotTopicRes() : HotTopicRes(nullptr) {}
+  ~HotTopicRes() override;
+  explicit PROTOBUF_CONSTEXPR HotTopicRes(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HotTopicRes(const HotTopicRes& from);
+  HotTopicRes(HotTopicRes&& from) noexcept
+    : HotTopicRes() {
+    *this = ::std::move(from);
+  }
+
+  inline HotTopicRes& operator=(const HotTopicRes& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HotTopicRes& operator=(HotTopicRes&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HotTopicRes& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HotTopicRes* internal_default_instance() {
+    return reinterpret_cast<const HotTopicRes*>(
+               &_HotTopicRes_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(HotTopicRes& a, HotTopicRes& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HotTopicRes* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HotTopicRes* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HotTopicRes* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HotTopicRes>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const HotTopicRes& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const HotTopicRes& from) {
+    HotTopicRes::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HotTopicRes* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "weibo.HotTopicRes";
+  }
+  protected:
+  explicit HotTopicRes(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTopicNameFieldNumber = 2,
+    kTopicIdFieldNumber = 1,
+  };
+  // string topic_name = 2;
+  void clear_topic_name();
+  const std::string& topic_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic_name();
+  PROTOBUF_NODISCARD std::string* release_topic_name();
+  void set_allocated_topic_name(std::string* topic_name);
+  private:
+  const std::string& _internal_topic_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic_name(const std::string& value);
+  std::string* _internal_mutable_topic_name();
+  public:
+
+  // int32 topic_id = 1;
+  void clear_topic_id();
+  int32_t topic_id() const;
+  void set_topic_id(int32_t value);
+  private:
+  int32_t _internal_topic_id() const;
+  void _internal_set_topic_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:weibo.HotTopicRes)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
+    int32_t topic_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_weibo_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LikeReq final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:weibo.LikeReq) */ {
+ public:
+  inline LikeReq() : LikeReq(nullptr) {}
+  ~LikeReq() override;
+  explicit PROTOBUF_CONSTEXPR LikeReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  LikeReq(const LikeReq& from);
+  LikeReq(LikeReq&& from) noexcept
+    : LikeReq() {
+    *this = ::std::move(from);
+  }
+
+  inline LikeReq& operator=(const LikeReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LikeReq& operator=(LikeReq&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const LikeReq& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const LikeReq* internal_default_instance() {
+    return reinterpret_cast<const LikeReq*>(
+               &_LikeReq_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(LikeReq& a, LikeReq& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LikeReq* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LikeReq* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  LikeReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<LikeReq>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const LikeReq& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const LikeReq& from) {
+    LikeReq::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LikeReq* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "weibo.LikeReq";
+  }
+  protected:
+  explicit LikeReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTokenFieldNumber = 1,
+    kPostIdFieldNumber = 2,
+  };
+  // string token = 1;
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_NODISCARD std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // int32 post_id = 2;
+  void clear_post_id();
+  int32_t post_id() const;
+  void set_post_id(int32_t value);
+  private:
+  int32_t _internal_post_id() const;
+  void _internal_set_post_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:weibo.LikeReq)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+    int32_t post_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_weibo_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CommentReq final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:weibo.CommentReq) */ {
+ public:
+  inline CommentReq() : CommentReq(nullptr) {}
+  ~CommentReq() override;
+  explicit PROTOBUF_CONSTEXPR CommentReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CommentReq(const CommentReq& from);
+  CommentReq(CommentReq&& from) noexcept
+    : CommentReq() {
+    *this = ::std::move(from);
+  }
+
+  inline CommentReq& operator=(const CommentReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CommentReq& operator=(CommentReq&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CommentReq& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CommentReq* internal_default_instance() {
+    return reinterpret_cast<const CommentReq*>(
+               &_CommentReq_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(CommentReq& a, CommentReq& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CommentReq* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CommentReq* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CommentReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CommentReq>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CommentReq& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CommentReq& from) {
+    CommentReq::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CommentReq* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "weibo.CommentReq";
+  }
+  protected:
+  explicit CommentReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTokenFieldNumber = 1,
+    kCommentTextFieldNumber = 2,
+    kPostIdFieldNumber = 3,
+  };
+  // string token = 1;
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_NODISCARD std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // string comment_text = 2;
+  void clear_comment_text();
+  const std::string& comment_text() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_comment_text(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_comment_text();
+  PROTOBUF_NODISCARD std::string* release_comment_text();
+  void set_allocated_comment_text(std::string* comment_text);
+  private:
+  const std::string& _internal_comment_text() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_comment_text(const std::string& value);
+  std::string* _internal_mutable_comment_text();
+  public:
+
+  // int32 post_id = 3;
+  void clear_post_id();
+  int32_t post_id() const;
+  void set_post_id(int32_t value);
+  private:
+  int32_t _internal_post_id() const;
+  void _internal_set_post_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:weibo.CommentReq)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr comment_text_;
+    int32_t post_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_weibo_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FollowReq final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:weibo.FollowReq) */ {
+ public:
+  inline FollowReq() : FollowReq(nullptr) {}
+  ~FollowReq() override;
+  explicit PROTOBUF_CONSTEXPR FollowReq(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FollowReq(const FollowReq& from);
+  FollowReq(FollowReq&& from) noexcept
+    : FollowReq() {
+    *this = ::std::move(from);
+  }
+
+  inline FollowReq& operator=(const FollowReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FollowReq& operator=(FollowReq&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FollowReq& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FollowReq* internal_default_instance() {
+    return reinterpret_cast<const FollowReq*>(
+               &_FollowReq_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(FollowReq& a, FollowReq& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FollowReq* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FollowReq* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FollowReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FollowReq>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FollowReq& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const FollowReq& from) {
+    FollowReq::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FollowReq* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "weibo.FollowReq";
+  }
+  protected:
+  explicit FollowReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTokenFieldNumber = 1,
+    kTargetUserIdFieldNumber = 2,
+  };
+  // string token = 1;
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_NODISCARD std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // int32 target_user_id = 2;
+  void clear_target_user_id();
+  int32_t target_user_id() const;
+  void set_target_user_id(int32_t value);
+  private:
+  int32_t _internal_target_user_id() const;
+  void _internal_set_target_user_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:weibo.FollowReq)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+    int32_t target_user_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_weibo_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UserInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:weibo.UserInfo) */ {
+ public:
+  inline UserInfo() : UserInfo(nullptr) {}
+  ~UserInfo() override;
+  explicit PROTOBUF_CONSTEXPR UserInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  UserInfo(const UserInfo& from);
+  UserInfo(UserInfo&& from) noexcept
+    : UserInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline UserInfo& operator=(const UserInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UserInfo& operator=(UserInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UserInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UserInfo* internal_default_instance() {
+    return reinterpret_cast<const UserInfo*>(
+               &_UserInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(UserInfo& a, UserInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UserInfo* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UserInfo* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  UserInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<UserInfo>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const UserInfo& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const UserInfo& from) {
+    UserInfo::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UserInfo* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "weibo.UserInfo";
+  }
+  protected:
+  explicit UserInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTokenFieldNumber = 1,
+  };
+  // string token = 1;
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_NODISCARD std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // @@protoc_insertion_point(class_scope:weibo.UserInfo)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_weibo_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Response final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:weibo.Response) */ {
+ public:
+  inline Response() : Response(nullptr) {}
+  ~Response() override;
+  explicit PROTOBUF_CONSTEXPR Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Response(const Response& from);
+  Response(Response&& from) noexcept
+    : Response() {
+    *this = ::std::move(from);
+  }
+
+  inline Response& operator=(const Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Response& operator=(Response&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Response* internal_default_instance() {
+    return reinterpret_cast<const Response*>(
+               &_Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(Response& a, Response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Response* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Response>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Response& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const Response& from) {
+    Response::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Response* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "weibo.Response";
+  }
+  protected:
+  explicit Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInfoFieldNumber = 2,
+    kResultCodeFieldNumber = 1,
+  };
+  // string info = 2;
+  void clear_info();
+  const std::string& info() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_info(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_info();
+  PROTOBUF_NODISCARD std::string* release_info();
+  void set_allocated_info(std::string* info);
+  private:
+  const std::string& _internal_info() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_info(const std::string& value);
+  std::string* _internal_mutable_info();
+  public:
+
+  // bool result_code = 1;
+  void clear_result_code();
+  bool result_code() const;
+  void set_result_code(bool value);
+  private:
+  bool _internal_result_code() const;
+  void _internal_set_result_code(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:weibo.Response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr info_;
+    bool result_code_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_weibo_2eproto;
+};
+// -------------------------------------------------------------------
 
 class PublishPostRes final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:weibo.PublishPostRes) */ {
@@ -140,7 +1428,7 @@ class PublishPostRes final :
                &_PublishPostRes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    8;
 
   friend void swap(PublishPostRes& a, PublishPostRes& b) {
     a.Swap(&b);
@@ -288,7 +1576,7 @@ class PublishPostReq final :
                &_PublishPostReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    9;
 
   friend void swap(PublishPostReq& a, PublishPostReq& b) {
     a.Swap(&b);
@@ -457,7 +1745,7 @@ class RegistReq final :
                &_RegistReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    10;
 
   friend void swap(RegistReq& a, RegistReq& b) {
     a.Swap(&b);
@@ -626,7 +1914,7 @@ class RegistRes final :
                &_RegistRes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    11;
 
   friend void swap(RegistRes& a, RegistRes& b) {
     a.Swap(&b);
@@ -801,7 +2089,7 @@ class LoginReq final :
                &_LoginReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    12;
 
   friend void swap(LoginReq& a, LoginReq& b) {
     a.Swap(&b);
@@ -970,7 +2258,7 @@ class LoginRes final :
                &_LoginRes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    13;
 
   friend void swap(LoginRes& a, LoginRes& b) {
     a.Swap(&b);
@@ -1145,7 +2433,7 @@ class GetHotPostReq final :
                &_GetHotPostReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    14;
 
   friend void swap(GetHotPostReq& a, GetHotPostReq& b) {
     a.Swap(&b);
@@ -1293,7 +2581,7 @@ class PostRes final :
                &_PostRes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    15;
 
   friend void swap(PostRes& a, PostRes& b) {
     a.Swap(&b);
@@ -1369,6 +2657,7 @@ class PostRes final :
     kTextFieldNumber = 2,
     kAuthorNameFieldNumber = 3,
     kPublishTimeFieldNumber = 5,
+    kTopicNameFieldNumber = 6,
     kPostIdFieldNumber = 1,
     kTransNumsFieldNumber = 4,
   };
@@ -1414,6 +2703,20 @@ class PostRes final :
   std::string* _internal_mutable_publish_time();
   public:
 
+  // string topic_name = 6;
+  void clear_topic_name();
+  const std::string& topic_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_topic_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_topic_name();
+  PROTOBUF_NODISCARD std::string* release_topic_name();
+  void set_allocated_topic_name(std::string* topic_name);
+  private:
+  const std::string& _internal_topic_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_topic_name(const std::string& value);
+  std::string* _internal_mutable_topic_name();
+  public:
+
   // uint32 post_id = 1;
   void clear_post_id();
   uint32_t post_id() const;
@@ -1443,6 +2746,7 @@ class PostRes final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr author_name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr publish_time_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_name_;
     uint32_t post_id_;
     int32_t trans_nums_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1500,7 +2804,7 @@ class GetPostByUserIdReq final :
                &_GetPostByUserIdReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    16;
 
   friend void swap(GetPostByUserIdReq& a, GetPostByUserIdReq& b) {
     a.Swap(&b);
@@ -1648,7 +2952,7 @@ class PostFeedReq final :
                &_PostFeedReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    17;
 
   friend void swap(PostFeedReq& a, PostFeedReq& b) {
     a.Swap(&b);
@@ -1771,6 +3075,508 @@ class PostFeedReq final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// GetPostByTopicIdReq
+
+// int32 topic_id = 1;
+inline void GetPostByTopicIdReq::clear_topic_id() {
+  _impl_.topic_id_ = 0;
+}
+inline int32_t GetPostByTopicIdReq::_internal_topic_id() const {
+  return _impl_.topic_id_;
+}
+inline int32_t GetPostByTopicIdReq::topic_id() const {
+  // @@protoc_insertion_point(field_get:weibo.GetPostByTopicIdReq.topic_id)
+  return _internal_topic_id();
+}
+inline void GetPostByTopicIdReq::_internal_set_topic_id(int32_t value) {
+  
+  _impl_.topic_id_ = value;
+}
+inline void GetPostByTopicIdReq::set_topic_id(int32_t value) {
+  _internal_set_topic_id(value);
+  // @@protoc_insertion_point(field_set:weibo.GetPostByTopicIdReq.topic_id)
+}
+
+// -------------------------------------------------------------------
+
+// Blank
+
+// -------------------------------------------------------------------
+
+// HotTopicRes
+
+// int32 topic_id = 1;
+inline void HotTopicRes::clear_topic_id() {
+  _impl_.topic_id_ = 0;
+}
+inline int32_t HotTopicRes::_internal_topic_id() const {
+  return _impl_.topic_id_;
+}
+inline int32_t HotTopicRes::topic_id() const {
+  // @@protoc_insertion_point(field_get:weibo.HotTopicRes.topic_id)
+  return _internal_topic_id();
+}
+inline void HotTopicRes::_internal_set_topic_id(int32_t value) {
+  
+  _impl_.topic_id_ = value;
+}
+inline void HotTopicRes::set_topic_id(int32_t value) {
+  _internal_set_topic_id(value);
+  // @@protoc_insertion_point(field_set:weibo.HotTopicRes.topic_id)
+}
+
+// string topic_name = 2;
+inline void HotTopicRes::clear_topic_name() {
+  _impl_.topic_name_.ClearToEmpty();
+}
+inline const std::string& HotTopicRes::topic_name() const {
+  // @@protoc_insertion_point(field_get:weibo.HotTopicRes.topic_name)
+  return _internal_topic_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void HotTopicRes::set_topic_name(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.topic_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:weibo.HotTopicRes.topic_name)
+}
+inline std::string* HotTopicRes::mutable_topic_name() {
+  std::string* _s = _internal_mutable_topic_name();
+  // @@protoc_insertion_point(field_mutable:weibo.HotTopicRes.topic_name)
+  return _s;
+}
+inline const std::string& HotTopicRes::_internal_topic_name() const {
+  return _impl_.topic_name_.Get();
+}
+inline void HotTopicRes::_internal_set_topic_name(const std::string& value) {
+  
+  _impl_.topic_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* HotTopicRes::_internal_mutable_topic_name() {
+  
+  return _impl_.topic_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* HotTopicRes::release_topic_name() {
+  // @@protoc_insertion_point(field_release:weibo.HotTopicRes.topic_name)
+  return _impl_.topic_name_.Release();
+}
+inline void HotTopicRes::set_allocated_topic_name(std::string* topic_name) {
+  if (topic_name != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.topic_name_.SetAllocated(topic_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.topic_name_.IsDefault()) {
+    _impl_.topic_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:weibo.HotTopicRes.topic_name)
+}
+
+// -------------------------------------------------------------------
+
+// LikeReq
+
+// string token = 1;
+inline void LikeReq::clear_token() {
+  _impl_.token_.ClearToEmpty();
+}
+inline const std::string& LikeReq::token() const {
+  // @@protoc_insertion_point(field_get:weibo.LikeReq.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LikeReq::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:weibo.LikeReq.token)
+}
+inline std::string* LikeReq::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:weibo.LikeReq.token)
+  return _s;
+}
+inline const std::string& LikeReq::_internal_token() const {
+  return _impl_.token_.Get();
+}
+inline void LikeReq::_internal_set_token(const std::string& value) {
+  
+  _impl_.token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* LikeReq::_internal_mutable_token() {
+  
+  return _impl_.token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* LikeReq::release_token() {
+  // @@protoc_insertion_point(field_release:weibo.LikeReq.token)
+  return _impl_.token_.Release();
+}
+inline void LikeReq::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.token_.IsDefault()) {
+    _impl_.token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:weibo.LikeReq.token)
+}
+
+// int32 post_id = 2;
+inline void LikeReq::clear_post_id() {
+  _impl_.post_id_ = 0;
+}
+inline int32_t LikeReq::_internal_post_id() const {
+  return _impl_.post_id_;
+}
+inline int32_t LikeReq::post_id() const {
+  // @@protoc_insertion_point(field_get:weibo.LikeReq.post_id)
+  return _internal_post_id();
+}
+inline void LikeReq::_internal_set_post_id(int32_t value) {
+  
+  _impl_.post_id_ = value;
+}
+inline void LikeReq::set_post_id(int32_t value) {
+  _internal_set_post_id(value);
+  // @@protoc_insertion_point(field_set:weibo.LikeReq.post_id)
+}
+
+// -------------------------------------------------------------------
+
+// CommentReq
+
+// string token = 1;
+inline void CommentReq::clear_token() {
+  _impl_.token_.ClearToEmpty();
+}
+inline const std::string& CommentReq::token() const {
+  // @@protoc_insertion_point(field_get:weibo.CommentReq.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommentReq::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:weibo.CommentReq.token)
+}
+inline std::string* CommentReq::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:weibo.CommentReq.token)
+  return _s;
+}
+inline const std::string& CommentReq::_internal_token() const {
+  return _impl_.token_.Get();
+}
+inline void CommentReq::_internal_set_token(const std::string& value) {
+  
+  _impl_.token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CommentReq::_internal_mutable_token() {
+  
+  return _impl_.token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CommentReq::release_token() {
+  // @@protoc_insertion_point(field_release:weibo.CommentReq.token)
+  return _impl_.token_.Release();
+}
+inline void CommentReq::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.token_.IsDefault()) {
+    _impl_.token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:weibo.CommentReq.token)
+}
+
+// string comment_text = 2;
+inline void CommentReq::clear_comment_text() {
+  _impl_.comment_text_.ClearToEmpty();
+}
+inline const std::string& CommentReq::comment_text() const {
+  // @@protoc_insertion_point(field_get:weibo.CommentReq.comment_text)
+  return _internal_comment_text();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommentReq::set_comment_text(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.comment_text_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:weibo.CommentReq.comment_text)
+}
+inline std::string* CommentReq::mutable_comment_text() {
+  std::string* _s = _internal_mutable_comment_text();
+  // @@protoc_insertion_point(field_mutable:weibo.CommentReq.comment_text)
+  return _s;
+}
+inline const std::string& CommentReq::_internal_comment_text() const {
+  return _impl_.comment_text_.Get();
+}
+inline void CommentReq::_internal_set_comment_text(const std::string& value) {
+  
+  _impl_.comment_text_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CommentReq::_internal_mutable_comment_text() {
+  
+  return _impl_.comment_text_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CommentReq::release_comment_text() {
+  // @@protoc_insertion_point(field_release:weibo.CommentReq.comment_text)
+  return _impl_.comment_text_.Release();
+}
+inline void CommentReq::set_allocated_comment_text(std::string* comment_text) {
+  if (comment_text != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.comment_text_.SetAllocated(comment_text, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.comment_text_.IsDefault()) {
+    _impl_.comment_text_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:weibo.CommentReq.comment_text)
+}
+
+// int32 post_id = 3;
+inline void CommentReq::clear_post_id() {
+  _impl_.post_id_ = 0;
+}
+inline int32_t CommentReq::_internal_post_id() const {
+  return _impl_.post_id_;
+}
+inline int32_t CommentReq::post_id() const {
+  // @@protoc_insertion_point(field_get:weibo.CommentReq.post_id)
+  return _internal_post_id();
+}
+inline void CommentReq::_internal_set_post_id(int32_t value) {
+  
+  _impl_.post_id_ = value;
+}
+inline void CommentReq::set_post_id(int32_t value) {
+  _internal_set_post_id(value);
+  // @@protoc_insertion_point(field_set:weibo.CommentReq.post_id)
+}
+
+// -------------------------------------------------------------------
+
+// FollowReq
+
+// string token = 1;
+inline void FollowReq::clear_token() {
+  _impl_.token_.ClearToEmpty();
+}
+inline const std::string& FollowReq::token() const {
+  // @@protoc_insertion_point(field_get:weibo.FollowReq.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void FollowReq::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:weibo.FollowReq.token)
+}
+inline std::string* FollowReq::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:weibo.FollowReq.token)
+  return _s;
+}
+inline const std::string& FollowReq::_internal_token() const {
+  return _impl_.token_.Get();
+}
+inline void FollowReq::_internal_set_token(const std::string& value) {
+  
+  _impl_.token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* FollowReq::_internal_mutable_token() {
+  
+  return _impl_.token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* FollowReq::release_token() {
+  // @@protoc_insertion_point(field_release:weibo.FollowReq.token)
+  return _impl_.token_.Release();
+}
+inline void FollowReq::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.token_.IsDefault()) {
+    _impl_.token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:weibo.FollowReq.token)
+}
+
+// int32 target_user_id = 2;
+inline void FollowReq::clear_target_user_id() {
+  _impl_.target_user_id_ = 0;
+}
+inline int32_t FollowReq::_internal_target_user_id() const {
+  return _impl_.target_user_id_;
+}
+inline int32_t FollowReq::target_user_id() const {
+  // @@protoc_insertion_point(field_get:weibo.FollowReq.target_user_id)
+  return _internal_target_user_id();
+}
+inline void FollowReq::_internal_set_target_user_id(int32_t value) {
+  
+  _impl_.target_user_id_ = value;
+}
+inline void FollowReq::set_target_user_id(int32_t value) {
+  _internal_set_target_user_id(value);
+  // @@protoc_insertion_point(field_set:weibo.FollowReq.target_user_id)
+}
+
+// -------------------------------------------------------------------
+
+// UserInfo
+
+// string token = 1;
+inline void UserInfo::clear_token() {
+  _impl_.token_.ClearToEmpty();
+}
+inline const std::string& UserInfo::token() const {
+  // @@protoc_insertion_point(field_get:weibo.UserInfo.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void UserInfo::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:weibo.UserInfo.token)
+}
+inline std::string* UserInfo::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:weibo.UserInfo.token)
+  return _s;
+}
+inline const std::string& UserInfo::_internal_token() const {
+  return _impl_.token_.Get();
+}
+inline void UserInfo::_internal_set_token(const std::string& value) {
+  
+  _impl_.token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* UserInfo::_internal_mutable_token() {
+  
+  return _impl_.token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* UserInfo::release_token() {
+  // @@protoc_insertion_point(field_release:weibo.UserInfo.token)
+  return _impl_.token_.Release();
+}
+inline void UserInfo::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.token_.SetAllocated(token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.token_.IsDefault()) {
+    _impl_.token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:weibo.UserInfo.token)
+}
+
+// -------------------------------------------------------------------
+
+// Response
+
+// bool result_code = 1;
+inline void Response::clear_result_code() {
+  _impl_.result_code_ = false;
+}
+inline bool Response::_internal_result_code() const {
+  return _impl_.result_code_;
+}
+inline bool Response::result_code() const {
+  // @@protoc_insertion_point(field_get:weibo.Response.result_code)
+  return _internal_result_code();
+}
+inline void Response::_internal_set_result_code(bool value) {
+  
+  _impl_.result_code_ = value;
+}
+inline void Response::set_result_code(bool value) {
+  _internal_set_result_code(value);
+  // @@protoc_insertion_point(field_set:weibo.Response.result_code)
+}
+
+// string info = 2;
+inline void Response::clear_info() {
+  _impl_.info_.ClearToEmpty();
+}
+inline const std::string& Response::info() const {
+  // @@protoc_insertion_point(field_get:weibo.Response.info)
+  return _internal_info();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Response::set_info(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.info_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:weibo.Response.info)
+}
+inline std::string* Response::mutable_info() {
+  std::string* _s = _internal_mutable_info();
+  // @@protoc_insertion_point(field_mutable:weibo.Response.info)
+  return _s;
+}
+inline const std::string& Response::_internal_info() const {
+  return _impl_.info_.Get();
+}
+inline void Response::_internal_set_info(const std::string& value) {
+  
+  _impl_.info_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Response::_internal_mutable_info() {
+  
+  return _impl_.info_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Response::release_info() {
+  // @@protoc_insertion_point(field_release:weibo.Response.info)
+  return _impl_.info_.Release();
+}
+inline void Response::set_allocated_info(std::string* info) {
+  if (info != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.info_.SetAllocated(info, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.info_.IsDefault()) {
+    _impl_.info_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:weibo.Response.info)
+}
+
+// -------------------------------------------------------------------
+
 // PublishPostRes
 
 // bool result_code = 1;
@@ -2511,6 +4317,56 @@ inline void PostRes::set_allocated_publish_time(std::string* publish_time) {
   // @@protoc_insertion_point(field_set_allocated:weibo.PostRes.publish_time)
 }
 
+// string topic_name = 6;
+inline void PostRes::clear_topic_name() {
+  _impl_.topic_name_.ClearToEmpty();
+}
+inline const std::string& PostRes::topic_name() const {
+  // @@protoc_insertion_point(field_get:weibo.PostRes.topic_name)
+  return _internal_topic_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void PostRes::set_topic_name(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.topic_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:weibo.PostRes.topic_name)
+}
+inline std::string* PostRes::mutable_topic_name() {
+  std::string* _s = _internal_mutable_topic_name();
+  // @@protoc_insertion_point(field_mutable:weibo.PostRes.topic_name)
+  return _s;
+}
+inline const std::string& PostRes::_internal_topic_name() const {
+  return _impl_.topic_name_.Get();
+}
+inline void PostRes::_internal_set_topic_name(const std::string& value) {
+  
+  _impl_.topic_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* PostRes::_internal_mutable_topic_name() {
+  
+  return _impl_.topic_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* PostRes::release_topic_name() {
+  // @@protoc_insertion_point(field_release:weibo.PostRes.topic_name)
+  return _impl_.topic_name_.Release();
+}
+inline void PostRes::set_allocated_topic_name(std::string* topic_name) {
+  if (topic_name != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.topic_name_.SetAllocated(topic_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.topic_name_.IsDefault()) {
+    _impl_.topic_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:weibo.PostRes.topic_name)
+}
+
 // -------------------------------------------------------------------
 
 // GetPostByUserIdReq
@@ -2612,6 +4468,22 @@ inline void PostFeedReq::set_allocated_token(std::string* token) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
