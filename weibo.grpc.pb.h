@@ -27,6 +27,8 @@
 
 namespace weibo {
 
+// protoc -I ./ --cpp_out=. weibo.proto
+// protoc -I ./ --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` weibo.proto
 class Weibo final {
  public:
   static constexpr char const* service_full_name() {
@@ -56,6 +58,27 @@ class Weibo final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::PublishPostRes>> PrepareAsyncPublishPost(::grpc::ClientContext* context, const ::weibo::PublishPostReq& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::PublishPostRes>>(PrepareAsyncPublishPostRaw(context, request, cq));
     }
+    virtual ::grpc::Status Follow(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::weibo::Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>> AsyncFollow(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>>(AsyncFollowRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>> PrepareAsyncFollow(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>>(PrepareAsyncFollowRaw(context, request, cq));
+    }
+    virtual ::grpc::Status CommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::weibo::Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>> AsyncCommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>>(AsyncCommentOnPostRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>> PrepareAsyncCommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>>(PrepareAsyncCommentOnPostRaw(context, request, cq));
+    }
+    virtual ::grpc::Status Like(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::weibo::Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>> AsyncLike(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>>(AsyncLikeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>> PrepareAsyncLike(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>>(PrepareAsyncLikeRaw(context, request, cq));
+    }
     std::unique_ptr< ::grpc::ClientReaderInterface< ::weibo::PostRes>> GetHot(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request) {
       return std::unique_ptr< ::grpc::ClientReaderInterface< ::weibo::PostRes>>(GetHotRaw(context, request));
     }
@@ -64,6 +87,24 @@ class Weibo final {
     }
     std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>> PrepareAsyncGetHot(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>>(PrepareAsyncGetHotRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::weibo::HotTopicRes>> GetHotTopic(::grpc::ClientContext* context, const ::weibo::Blank& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::weibo::HotTopicRes>>(GetHotTopicRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::HotTopicRes>> AsyncGetHotTopic(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::HotTopicRes>>(AsyncGetHotTopicRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::HotTopicRes>> PrepareAsyncGetHotTopic(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::HotTopicRes>>(PrepareAsyncGetHotTopicRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::weibo::PostRes>> GetPostByTopicId(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::weibo::PostRes>>(GetPostByTopicIdRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>> AsyncGetPostByTopicId(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>>(AsyncGetPostByTopicIdRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>> PrepareAsyncGetPostByTopicId(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>>(PrepareAsyncGetPostByTopicIdRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientReaderInterface< ::weibo::PostRes>> GetPostByUserId(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq& request) {
       return std::unique_ptr< ::grpc::ClientReaderInterface< ::weibo::PostRes>>(GetPostByUserIdRaw(context, request));
@@ -101,7 +142,15 @@ class Weibo final {
       virtual void Login(::grpc::ClientContext* context, const ::weibo::LoginReq* request, ::weibo::LoginRes* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void PublishPost(::grpc::ClientContext* context, const ::weibo::PublishPostReq* request, ::weibo::PublishPostRes* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PublishPost(::grpc::ClientContext* context, const ::weibo::PublishPostReq* request, ::weibo::PublishPostRes* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Follow(::grpc::ClientContext* context, const ::weibo::FollowReq* request, ::weibo::Response* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Follow(::grpc::ClientContext* context, const ::weibo::FollowReq* request, ::weibo::Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void CommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq* request, ::weibo::Response* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq* request, ::weibo::Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Like(::grpc::ClientContext* context, const ::weibo::LikeReq* request, ::weibo::Response* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Like(::grpc::ClientContext* context, const ::weibo::LikeReq* request, ::weibo::Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetHot(::grpc::ClientContext* context, const ::weibo::GetHotPostReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) = 0;
+      virtual void GetHotTopic(::grpc::ClientContext* context, const ::weibo::Blank* request, ::grpc::ClientReadReactor< ::weibo::HotTopicRes>* reactor) = 0;
+      virtual void GetPostByTopicId(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) = 0;
       virtual void GetPostByUserId(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) = 0;
       virtual void PostFeedByRecommend(::grpc::ClientContext* context, const ::weibo::PostFeedReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) = 0;
       virtual void PostFeedByFollow(::grpc::ClientContext* context, const ::weibo::PostFeedReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) = 0;
@@ -116,9 +165,21 @@ class Weibo final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::weibo::LoginRes>* PrepareAsyncLoginRaw(::grpc::ClientContext* context, const ::weibo::LoginReq& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::weibo::PublishPostRes>* AsyncPublishPostRaw(::grpc::ClientContext* context, const ::weibo::PublishPostReq& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::weibo::PublishPostRes>* PrepareAsyncPublishPostRaw(::grpc::ClientContext* context, const ::weibo::PublishPostReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>* AsyncFollowRaw(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>* PrepareAsyncFollowRaw(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>* AsyncCommentOnPostRaw(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>* PrepareAsyncCommentOnPostRaw(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>* AsyncLikeRaw(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::weibo::Response>* PrepareAsyncLikeRaw(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientReaderInterface< ::weibo::PostRes>* GetHotRaw(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>* AsyncGetHotRaw(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>* PrepareAsyncGetHotRaw(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::weibo::HotTopicRes>* GetHotTopicRaw(::grpc::ClientContext* context, const ::weibo::Blank& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::weibo::HotTopicRes>* AsyncGetHotTopicRaw(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::weibo::HotTopicRes>* PrepareAsyncGetHotTopicRaw(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::weibo::PostRes>* GetPostByTopicIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>* AsyncGetPostByTopicIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>* PrepareAsyncGetPostByTopicIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientReaderInterface< ::weibo::PostRes>* GetPostByUserIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>* AsyncGetPostByUserIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::weibo::PostRes>* PrepareAsyncGetPostByUserIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq& request, ::grpc::CompletionQueue* cq) = 0;
@@ -153,6 +214,27 @@ class Weibo final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::PublishPostRes>> PrepareAsyncPublishPost(::grpc::ClientContext* context, const ::weibo::PublishPostReq& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::PublishPostRes>>(PrepareAsyncPublishPostRaw(context, request, cq));
     }
+    ::grpc::Status Follow(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::weibo::Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>> AsyncFollow(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>>(AsyncFollowRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>> PrepareAsyncFollow(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>>(PrepareAsyncFollowRaw(context, request, cq));
+    }
+    ::grpc::Status CommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::weibo::Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>> AsyncCommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>>(AsyncCommentOnPostRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>> PrepareAsyncCommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>>(PrepareAsyncCommentOnPostRaw(context, request, cq));
+    }
+    ::grpc::Status Like(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::weibo::Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>> AsyncLike(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>>(AsyncLikeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>> PrepareAsyncLike(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::weibo::Response>>(PrepareAsyncLikeRaw(context, request, cq));
+    }
     std::unique_ptr< ::grpc::ClientReader< ::weibo::PostRes>> GetHot(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request) {
       return std::unique_ptr< ::grpc::ClientReader< ::weibo::PostRes>>(GetHotRaw(context, request));
     }
@@ -161,6 +243,24 @@ class Weibo final {
     }
     std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::PostRes>> PrepareAsyncGetHot(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::PostRes>>(PrepareAsyncGetHotRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReader< ::weibo::HotTopicRes>> GetHotTopic(::grpc::ClientContext* context, const ::weibo::Blank& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::weibo::HotTopicRes>>(GetHotTopicRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::HotTopicRes>> AsyncGetHotTopic(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::HotTopicRes>>(AsyncGetHotTopicRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::HotTopicRes>> PrepareAsyncGetHotTopic(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::HotTopicRes>>(PrepareAsyncGetHotTopicRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReader< ::weibo::PostRes>> GetPostByTopicId(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::weibo::PostRes>>(GetPostByTopicIdRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::PostRes>> AsyncGetPostByTopicId(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::PostRes>>(AsyncGetPostByTopicIdRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::PostRes>> PrepareAsyncGetPostByTopicId(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::weibo::PostRes>>(PrepareAsyncGetPostByTopicIdRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientReader< ::weibo::PostRes>> GetPostByUserId(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq& request) {
       return std::unique_ptr< ::grpc::ClientReader< ::weibo::PostRes>>(GetPostByUserIdRaw(context, request));
@@ -198,7 +298,15 @@ class Weibo final {
       void Login(::grpc::ClientContext* context, const ::weibo::LoginReq* request, ::weibo::LoginRes* response, ::grpc::ClientUnaryReactor* reactor) override;
       void PublishPost(::grpc::ClientContext* context, const ::weibo::PublishPostReq* request, ::weibo::PublishPostRes* response, std::function<void(::grpc::Status)>) override;
       void PublishPost(::grpc::ClientContext* context, const ::weibo::PublishPostReq* request, ::weibo::PublishPostRes* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Follow(::grpc::ClientContext* context, const ::weibo::FollowReq* request, ::weibo::Response* response, std::function<void(::grpc::Status)>) override;
+      void Follow(::grpc::ClientContext* context, const ::weibo::FollowReq* request, ::weibo::Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void CommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq* request, ::weibo::Response* response, std::function<void(::grpc::Status)>) override;
+      void CommentOnPost(::grpc::ClientContext* context, const ::weibo::CommentReq* request, ::weibo::Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Like(::grpc::ClientContext* context, const ::weibo::LikeReq* request, ::weibo::Response* response, std::function<void(::grpc::Status)>) override;
+      void Like(::grpc::ClientContext* context, const ::weibo::LikeReq* request, ::weibo::Response* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetHot(::grpc::ClientContext* context, const ::weibo::GetHotPostReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) override;
+      void GetHotTopic(::grpc::ClientContext* context, const ::weibo::Blank* request, ::grpc::ClientReadReactor< ::weibo::HotTopicRes>* reactor) override;
+      void GetPostByTopicId(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) override;
       void GetPostByUserId(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) override;
       void PostFeedByRecommend(::grpc::ClientContext* context, const ::weibo::PostFeedReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) override;
       void PostFeedByFollow(::grpc::ClientContext* context, const ::weibo::PostFeedReq* request, ::grpc::ClientReadReactor< ::weibo::PostRes>* reactor) override;
@@ -219,9 +327,21 @@ class Weibo final {
     ::grpc::ClientAsyncResponseReader< ::weibo::LoginRes>* PrepareAsyncLoginRaw(::grpc::ClientContext* context, const ::weibo::LoginReq& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::weibo::PublishPostRes>* AsyncPublishPostRaw(::grpc::ClientContext* context, const ::weibo::PublishPostReq& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::weibo::PublishPostRes>* PrepareAsyncPublishPostRaw(::grpc::ClientContext* context, const ::weibo::PublishPostReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::weibo::Response>* AsyncFollowRaw(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::weibo::Response>* PrepareAsyncFollowRaw(::grpc::ClientContext* context, const ::weibo::FollowReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::weibo::Response>* AsyncCommentOnPostRaw(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::weibo::Response>* PrepareAsyncCommentOnPostRaw(::grpc::ClientContext* context, const ::weibo::CommentReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::weibo::Response>* AsyncLikeRaw(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::weibo::Response>* PrepareAsyncLikeRaw(::grpc::ClientContext* context, const ::weibo::LikeReq& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientReader< ::weibo::PostRes>* GetHotRaw(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request) override;
     ::grpc::ClientAsyncReader< ::weibo::PostRes>* AsyncGetHotRaw(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request, ::grpc::CompletionQueue* cq, void* tag) override;
     ::grpc::ClientAsyncReader< ::weibo::PostRes>* PrepareAsyncGetHotRaw(::grpc::ClientContext* context, const ::weibo::GetHotPostReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::weibo::HotTopicRes>* GetHotTopicRaw(::grpc::ClientContext* context, const ::weibo::Blank& request) override;
+    ::grpc::ClientAsyncReader< ::weibo::HotTopicRes>* AsyncGetHotTopicRaw(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::weibo::HotTopicRes>* PrepareAsyncGetHotTopicRaw(::grpc::ClientContext* context, const ::weibo::Blank& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::weibo::PostRes>* GetPostByTopicIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request) override;
+    ::grpc::ClientAsyncReader< ::weibo::PostRes>* AsyncGetPostByTopicIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::weibo::PostRes>* PrepareAsyncGetPostByTopicIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByTopicIdReq& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientReader< ::weibo::PostRes>* GetPostByUserIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq& request) override;
     ::grpc::ClientAsyncReader< ::weibo::PostRes>* AsyncGetPostByUserIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq& request, ::grpc::CompletionQueue* cq, void* tag) override;
     ::grpc::ClientAsyncReader< ::weibo::PostRes>* PrepareAsyncGetPostByUserIdRaw(::grpc::ClientContext* context, const ::weibo::GetPostByUserIdReq& request, ::grpc::CompletionQueue* cq) override;
@@ -234,7 +354,12 @@ class Weibo final {
     const ::grpc::internal::RpcMethod rpcmethod_Regist_;
     const ::grpc::internal::RpcMethod rpcmethod_Login_;
     const ::grpc::internal::RpcMethod rpcmethod_PublishPost_;
+    const ::grpc::internal::RpcMethod rpcmethod_Follow_;
+    const ::grpc::internal::RpcMethod rpcmethod_CommentOnPost_;
+    const ::grpc::internal::RpcMethod rpcmethod_Like_;
     const ::grpc::internal::RpcMethod rpcmethod_GetHot_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetHotTopic_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetPostByTopicId_;
     const ::grpc::internal::RpcMethod rpcmethod_GetPostByUserId_;
     const ::grpc::internal::RpcMethod rpcmethod_PostFeedByRecommend_;
     const ::grpc::internal::RpcMethod rpcmethod_PostFeedByFollow_;
@@ -248,7 +373,12 @@ class Weibo final {
     virtual ::grpc::Status Regist(::grpc::ServerContext* context, const ::weibo::RegistReq* request, ::weibo::RegistRes* response);
     virtual ::grpc::Status Login(::grpc::ServerContext* context, const ::weibo::LoginReq* request, ::weibo::LoginRes* response);
     virtual ::grpc::Status PublishPost(::grpc::ServerContext* context, const ::weibo::PublishPostReq* request, ::weibo::PublishPostRes* response);
+    virtual ::grpc::Status Follow(::grpc::ServerContext* context, const ::weibo::FollowReq* request, ::weibo::Response* response);
+    virtual ::grpc::Status CommentOnPost(::grpc::ServerContext* context, const ::weibo::CommentReq* request, ::weibo::Response* response);
+    virtual ::grpc::Status Like(::grpc::ServerContext* context, const ::weibo::LikeReq* request, ::weibo::Response* response);
     virtual ::grpc::Status GetHot(::grpc::ServerContext* context, const ::weibo::GetHotPostReq* request, ::grpc::ServerWriter< ::weibo::PostRes>* writer);
+    virtual ::grpc::Status GetHotTopic(::grpc::ServerContext* context, const ::weibo::Blank* request, ::grpc::ServerWriter< ::weibo::HotTopicRes>* writer);
+    virtual ::grpc::Status GetPostByTopicId(::grpc::ServerContext* context, const ::weibo::GetPostByTopicIdReq* request, ::grpc::ServerWriter< ::weibo::PostRes>* writer);
     virtual ::grpc::Status GetPostByUserId(::grpc::ServerContext* context, const ::weibo::GetPostByUserIdReq* request, ::grpc::ServerWriter< ::weibo::PostRes>* writer);
     virtual ::grpc::Status PostFeedByRecommend(::grpc::ServerContext* context, const ::weibo::PostFeedReq* request, ::grpc::ServerWriter< ::weibo::PostRes>* writer);
     virtual ::grpc::Status PostFeedByFollow(::grpc::ServerContext* context, const ::weibo::PostFeedReq* request, ::grpc::ServerWriter< ::weibo::PostRes>* writer);
@@ -314,12 +444,72 @@ class Weibo final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_Follow : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Follow() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_Follow() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Follow(::grpc::ServerContext* /*context*/, const ::weibo::FollowReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFollow(::grpc::ServerContext* context, ::weibo::FollowReq* request, ::grpc::ServerAsyncResponseWriter< ::weibo::Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_CommentOnPost : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_CommentOnPost() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_CommentOnPost() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CommentOnPost(::grpc::ServerContext* /*context*/, const ::weibo::CommentReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCommentOnPost(::grpc::ServerContext* context, ::weibo::CommentReq* request, ::grpc::ServerAsyncResponseWriter< ::weibo::Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_Like : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Like() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_Like() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Like(::grpc::ServerContext* /*context*/, const ::weibo::LikeReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLike(::grpc::ServerContext* context, ::weibo::LikeReq* request, ::grpc::ServerAsyncResponseWriter< ::weibo::Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_GetHot : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetHot() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_GetHot() override {
       BaseClassMustBeDerivedFromService(this);
@@ -330,7 +520,47 @@ class Weibo final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetHot(::grpc::ServerContext* context, ::weibo::GetHotPostReq* request, ::grpc::ServerAsyncWriter< ::weibo::PostRes>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(3, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(6, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetHotTopic : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetHotTopic() {
+      ::grpc::Service::MarkMethodAsync(7);
+    }
+    ~WithAsyncMethod_GetHotTopic() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetHotTopic(::grpc::ServerContext* /*context*/, const ::weibo::Blank* /*request*/, ::grpc::ServerWriter< ::weibo::HotTopicRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetHotTopic(::grpc::ServerContext* context, ::weibo::Blank* request, ::grpc::ServerAsyncWriter< ::weibo::HotTopicRes>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(7, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetPostByTopicId : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetPostByTopicId() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_GetPostByTopicId() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPostByTopicId(::grpc::ServerContext* /*context*/, const ::weibo::GetPostByTopicIdReq* /*request*/, ::grpc::ServerWriter< ::weibo::PostRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetPostByTopicId(::grpc::ServerContext* context, ::weibo::GetPostByTopicIdReq* request, ::grpc::ServerAsyncWriter< ::weibo::PostRes>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(8, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -339,7 +569,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetPostByUserId() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_GetPostByUserId() override {
       BaseClassMustBeDerivedFromService(this);
@@ -350,7 +580,7 @@ class Weibo final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPostByUserId(::grpc::ServerContext* context, ::weibo::GetPostByUserIdReq* request, ::grpc::ServerAsyncWriter< ::weibo::PostRes>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(9, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -359,7 +589,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PostFeedByRecommend() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_PostFeedByRecommend() override {
       BaseClassMustBeDerivedFromService(this);
@@ -370,7 +600,7 @@ class Weibo final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostFeedByRecommend(::grpc::ServerContext* context, ::weibo::PostFeedReq* request, ::grpc::ServerAsyncWriter< ::weibo::PostRes>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(5, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(10, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -379,7 +609,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PostFeedByFollow() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_PostFeedByFollow() override {
       BaseClassMustBeDerivedFromService(this);
@@ -390,10 +620,10 @@ class Weibo final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostFeedByFollow(::grpc::ServerContext* context, ::weibo::PostFeedReq* request, ::grpc::ServerAsyncWriter< ::weibo::PostRes>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(6, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(11, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_Regist<WithAsyncMethod_Login<WithAsyncMethod_PublishPost<WithAsyncMethod_GetHot<WithAsyncMethod_GetPostByUserId<WithAsyncMethod_PostFeedByRecommend<WithAsyncMethod_PostFeedByFollow<Service > > > > > > > AsyncService;
+  typedef WithAsyncMethod_Regist<WithAsyncMethod_Login<WithAsyncMethod_PublishPost<WithAsyncMethod_Follow<WithAsyncMethod_CommentOnPost<WithAsyncMethod_Like<WithAsyncMethod_GetHot<WithAsyncMethod_GetHotTopic<WithAsyncMethod_GetPostByTopicId<WithAsyncMethod_GetPostByUserId<WithAsyncMethod_PostFeedByRecommend<WithAsyncMethod_PostFeedByFollow<Service > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_Regist : public BaseClass {
    private:
@@ -476,12 +706,93 @@ class Weibo final {
       ::grpc::CallbackServerContext* /*context*/, const ::weibo::PublishPostReq* /*request*/, ::weibo::PublishPostRes* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_Follow : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_Follow() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::weibo::FollowReq, ::weibo::Response>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::weibo::FollowReq* request, ::weibo::Response* response) { return this->Follow(context, request, response); }));}
+    void SetMessageAllocatorFor_Follow(
+        ::grpc::MessageAllocator< ::weibo::FollowReq, ::weibo::Response>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::weibo::FollowReq, ::weibo::Response>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_Follow() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Follow(::grpc::ServerContext* /*context*/, const ::weibo::FollowReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Follow(
+      ::grpc::CallbackServerContext* /*context*/, const ::weibo::FollowReq* /*request*/, ::weibo::Response* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_CommentOnPost : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_CommentOnPost() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::weibo::CommentReq, ::weibo::Response>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::weibo::CommentReq* request, ::weibo::Response* response) { return this->CommentOnPost(context, request, response); }));}
+    void SetMessageAllocatorFor_CommentOnPost(
+        ::grpc::MessageAllocator< ::weibo::CommentReq, ::weibo::Response>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::weibo::CommentReq, ::weibo::Response>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_CommentOnPost() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CommentOnPost(::grpc::ServerContext* /*context*/, const ::weibo::CommentReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* CommentOnPost(
+      ::grpc::CallbackServerContext* /*context*/, const ::weibo::CommentReq* /*request*/, ::weibo::Response* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_Like : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_Like() {
+      ::grpc::Service::MarkMethodCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::weibo::LikeReq, ::weibo::Response>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::weibo::LikeReq* request, ::weibo::Response* response) { return this->Like(context, request, response); }));}
+    void SetMessageAllocatorFor_Like(
+        ::grpc::MessageAllocator< ::weibo::LikeReq, ::weibo::Response>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::weibo::LikeReq, ::weibo::Response>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_Like() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Like(::grpc::ServerContext* /*context*/, const ::weibo::LikeReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Like(
+      ::grpc::CallbackServerContext* /*context*/, const ::weibo::LikeReq* /*request*/, ::weibo::Response* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_GetHot : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetHot() {
-      ::grpc::Service::MarkMethodCallback(3,
+      ::grpc::Service::MarkMethodCallback(6,
           new ::grpc::internal::CallbackServerStreamingHandler< ::weibo::GetHotPostReq, ::weibo::PostRes>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::weibo::GetHotPostReq* request) { return this->GetHot(context, request); }));
@@ -498,12 +809,56 @@ class Weibo final {
       ::grpc::CallbackServerContext* /*context*/, const ::weibo::GetHotPostReq* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_GetHotTopic : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetHotTopic() {
+      ::grpc::Service::MarkMethodCallback(7,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::weibo::Blank, ::weibo::HotTopicRes>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::weibo::Blank* request) { return this->GetHotTopic(context, request); }));
+    }
+    ~WithCallbackMethod_GetHotTopic() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetHotTopic(::grpc::ServerContext* /*context*/, const ::weibo::Blank* /*request*/, ::grpc::ServerWriter< ::weibo::HotTopicRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerWriteReactor< ::weibo::HotTopicRes>* GetHotTopic(
+      ::grpc::CallbackServerContext* /*context*/, const ::weibo::Blank* /*request*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_GetPostByTopicId : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetPostByTopicId() {
+      ::grpc::Service::MarkMethodCallback(8,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::weibo::GetPostByTopicIdReq, ::weibo::PostRes>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::weibo::GetPostByTopicIdReq* request) { return this->GetPostByTopicId(context, request); }));
+    }
+    ~WithCallbackMethod_GetPostByTopicId() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPostByTopicId(::grpc::ServerContext* /*context*/, const ::weibo::GetPostByTopicIdReq* /*request*/, ::grpc::ServerWriter< ::weibo::PostRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerWriteReactor< ::weibo::PostRes>* GetPostByTopicId(
+      ::grpc::CallbackServerContext* /*context*/, const ::weibo::GetPostByTopicIdReq* /*request*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_GetPostByUserId : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetPostByUserId() {
-      ::grpc::Service::MarkMethodCallback(4,
+      ::grpc::Service::MarkMethodCallback(9,
           new ::grpc::internal::CallbackServerStreamingHandler< ::weibo::GetPostByUserIdReq, ::weibo::PostRes>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::weibo::GetPostByUserIdReq* request) { return this->GetPostByUserId(context, request); }));
@@ -525,7 +880,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_PostFeedByRecommend() {
-      ::grpc::Service::MarkMethodCallback(5,
+      ::grpc::Service::MarkMethodCallback(10,
           new ::grpc::internal::CallbackServerStreamingHandler< ::weibo::PostFeedReq, ::weibo::PostRes>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::weibo::PostFeedReq* request) { return this->PostFeedByRecommend(context, request); }));
@@ -547,7 +902,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_PostFeedByFollow() {
-      ::grpc::Service::MarkMethodCallback(6,
+      ::grpc::Service::MarkMethodCallback(11,
           new ::grpc::internal::CallbackServerStreamingHandler< ::weibo::PostFeedReq, ::weibo::PostRes>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::weibo::PostFeedReq* request) { return this->PostFeedByFollow(context, request); }));
@@ -563,7 +918,7 @@ class Weibo final {
     virtual ::grpc::ServerWriteReactor< ::weibo::PostRes>* PostFeedByFollow(
       ::grpc::CallbackServerContext* /*context*/, const ::weibo::PostFeedReq* /*request*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_Regist<WithCallbackMethod_Login<WithCallbackMethod_PublishPost<WithCallbackMethod_GetHot<WithCallbackMethod_GetPostByUserId<WithCallbackMethod_PostFeedByRecommend<WithCallbackMethod_PostFeedByFollow<Service > > > > > > > CallbackService;
+  typedef WithCallbackMethod_Regist<WithCallbackMethod_Login<WithCallbackMethod_PublishPost<WithCallbackMethod_Follow<WithCallbackMethod_CommentOnPost<WithCallbackMethod_Like<WithCallbackMethod_GetHot<WithCallbackMethod_GetHotTopic<WithCallbackMethod_GetPostByTopicId<WithCallbackMethod_GetPostByUserId<WithCallbackMethod_PostFeedByRecommend<WithCallbackMethod_PostFeedByFollow<Service > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_Regist : public BaseClass {
@@ -617,12 +972,63 @@ class Weibo final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_Follow : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Follow() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_Follow() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Follow(::grpc::ServerContext* /*context*/, const ::weibo::FollowReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_CommentOnPost : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_CommentOnPost() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_CommentOnPost() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CommentOnPost(::grpc::ServerContext* /*context*/, const ::weibo::CommentReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_Like : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Like() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_Like() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Like(::grpc::ServerContext* /*context*/, const ::weibo::LikeReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_GetHot : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetHot() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_GetHot() override {
       BaseClassMustBeDerivedFromService(this);
@@ -634,12 +1040,46 @@ class Weibo final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_GetHotTopic : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetHotTopic() {
+      ::grpc::Service::MarkMethodGeneric(7);
+    }
+    ~WithGenericMethod_GetHotTopic() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetHotTopic(::grpc::ServerContext* /*context*/, const ::weibo::Blank* /*request*/, ::grpc::ServerWriter< ::weibo::HotTopicRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetPostByTopicId : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetPostByTopicId() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_GetPostByTopicId() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPostByTopicId(::grpc::ServerContext* /*context*/, const ::weibo::GetPostByTopicIdReq* /*request*/, ::grpc::ServerWriter< ::weibo::PostRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_GetPostByUserId : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetPostByUserId() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_GetPostByUserId() override {
       BaseClassMustBeDerivedFromService(this);
@@ -656,7 +1096,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PostFeedByRecommend() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_PostFeedByRecommend() override {
       BaseClassMustBeDerivedFromService(this);
@@ -673,7 +1113,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PostFeedByFollow() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_PostFeedByFollow() override {
       BaseClassMustBeDerivedFromService(this);
@@ -745,12 +1185,72 @@ class Weibo final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_Follow : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Follow() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_Follow() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Follow(::grpc::ServerContext* /*context*/, const ::weibo::FollowReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFollow(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_CommentOnPost : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_CommentOnPost() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_CommentOnPost() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CommentOnPost(::grpc::ServerContext* /*context*/, const ::weibo::CommentReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestCommentOnPost(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Like : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Like() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_Like() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Like(::grpc::ServerContext* /*context*/, const ::weibo::LikeReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLike(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_GetHot : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetHot() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_GetHot() override {
       BaseClassMustBeDerivedFromService(this);
@@ -761,7 +1261,47 @@ class Weibo final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetHot(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(3, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(6, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetHotTopic : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetHotTopic() {
+      ::grpc::Service::MarkMethodRaw(7);
+    }
+    ~WithRawMethod_GetHotTopic() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetHotTopic(::grpc::ServerContext* /*context*/, const ::weibo::Blank* /*request*/, ::grpc::ServerWriter< ::weibo::HotTopicRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetHotTopic(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(7, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetPostByTopicId : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetPostByTopicId() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_GetPostByTopicId() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPostByTopicId(::grpc::ServerContext* /*context*/, const ::weibo::GetPostByTopicIdReq* /*request*/, ::grpc::ServerWriter< ::weibo::PostRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetPostByTopicId(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(8, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -770,7 +1310,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetPostByUserId() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_GetPostByUserId() override {
       BaseClassMustBeDerivedFromService(this);
@@ -781,7 +1321,7 @@ class Weibo final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPostByUserId(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(9, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -790,7 +1330,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PostFeedByRecommend() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_PostFeedByRecommend() override {
       BaseClassMustBeDerivedFromService(this);
@@ -801,7 +1341,7 @@ class Weibo final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostFeedByRecommend(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(5, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(10, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -810,7 +1350,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PostFeedByFollow() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_PostFeedByFollow() override {
       BaseClassMustBeDerivedFromService(this);
@@ -821,7 +1361,7 @@ class Weibo final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPostFeedByFollow(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(6, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(11, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -891,12 +1431,78 @@ class Weibo final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_Follow : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_Follow() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Follow(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_Follow() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Follow(::grpc::ServerContext* /*context*/, const ::weibo::FollowReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Follow(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_CommentOnPost : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_CommentOnPost() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CommentOnPost(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_CommentOnPost() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status CommentOnPost(::grpc::ServerContext* /*context*/, const ::weibo::CommentReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* CommentOnPost(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_Like : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_Like() {
+      ::grpc::Service::MarkMethodRawCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Like(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_Like() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Like(::grpc::ServerContext* /*context*/, const ::weibo::LikeReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Like(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_GetHot : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetHot() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+      ::grpc::Service::MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetHot(context, request); }));
@@ -913,12 +1519,56 @@ class Weibo final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_GetHotTopic : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetHotTopic() {
+      ::grpc::Service::MarkMethodRawCallback(7,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetHotTopic(context, request); }));
+    }
+    ~WithRawCallbackMethod_GetHotTopic() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetHotTopic(::grpc::ServerContext* /*context*/, const ::weibo::Blank* /*request*/, ::grpc::ServerWriter< ::weibo::HotTopicRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* GetHotTopic(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetPostByTopicId : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetPostByTopicId() {
+      ::grpc::Service::MarkMethodRawCallback(8,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetPostByTopicId(context, request); }));
+    }
+    ~WithRawCallbackMethod_GetPostByTopicId() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPostByTopicId(::grpc::ServerContext* /*context*/, const ::weibo::GetPostByTopicIdReq* /*request*/, ::grpc::ServerWriter< ::weibo::PostRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* GetPostByTopicId(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_GetPostByUserId : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetPostByUserId() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+      ::grpc::Service::MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->GetPostByUserId(context, request); }));
@@ -940,7 +1590,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_PostFeedByRecommend() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+      ::grpc::Service::MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->PostFeedByRecommend(context, request); }));
@@ -962,7 +1612,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_PostFeedByFollow() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+      ::grpc::Service::MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->PostFeedByFollow(context, request); }));
@@ -1059,14 +1709,95 @@ class Weibo final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedPublishPost(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::weibo::PublishPostReq,::weibo::PublishPostRes>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_Regist<WithStreamedUnaryMethod_Login<WithStreamedUnaryMethod_PublishPost<Service > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Follow : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Follow() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::weibo::FollowReq, ::weibo::Response>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::weibo::FollowReq, ::weibo::Response>* streamer) {
+                       return this->StreamedFollow(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Follow() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Follow(::grpc::ServerContext* /*context*/, const ::weibo::FollowReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedFollow(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::weibo::FollowReq,::weibo::Response>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_CommentOnPost : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_CommentOnPost() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::weibo::CommentReq, ::weibo::Response>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::weibo::CommentReq, ::weibo::Response>* streamer) {
+                       return this->StreamedCommentOnPost(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_CommentOnPost() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status CommentOnPost(::grpc::ServerContext* /*context*/, const ::weibo::CommentReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedCommentOnPost(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::weibo::CommentReq,::weibo::Response>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Like : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Like() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::weibo::LikeReq, ::weibo::Response>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::weibo::LikeReq, ::weibo::Response>* streamer) {
+                       return this->StreamedLike(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Like() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Like(::grpc::ServerContext* /*context*/, const ::weibo::LikeReq* /*request*/, ::weibo::Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedLike(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::weibo::LikeReq,::weibo::Response>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_Regist<WithStreamedUnaryMethod_Login<WithStreamedUnaryMethod_PublishPost<WithStreamedUnaryMethod_Follow<WithStreamedUnaryMethod_CommentOnPost<WithStreamedUnaryMethod_Like<Service > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_GetHot : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_GetHot() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::weibo::GetHotPostReq, ::weibo::PostRes>(
             [this](::grpc::ServerContext* context,
@@ -1088,12 +1819,66 @@ class Weibo final {
     virtual ::grpc::Status StreamedGetHot(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::weibo::GetHotPostReq,::weibo::PostRes>* server_split_streamer) = 0;
   };
   template <class BaseClass>
+  class WithSplitStreamingMethod_GetHotTopic : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_GetHotTopic() {
+      ::grpc::Service::MarkMethodStreamed(7,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::weibo::Blank, ::weibo::HotTopicRes>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
+                     ::weibo::Blank, ::weibo::HotTopicRes>* streamer) {
+                       return this->StreamedGetHotTopic(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_GetHotTopic() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetHotTopic(::grpc::ServerContext* /*context*/, const ::weibo::Blank* /*request*/, ::grpc::ServerWriter< ::weibo::HotTopicRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedGetHotTopic(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::weibo::Blank,::weibo::HotTopicRes>* server_split_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithSplitStreamingMethod_GetPostByTopicId : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_GetPostByTopicId() {
+      ::grpc::Service::MarkMethodStreamed(8,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::weibo::GetPostByTopicIdReq, ::weibo::PostRes>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
+                     ::weibo::GetPostByTopicIdReq, ::weibo::PostRes>* streamer) {
+                       return this->StreamedGetPostByTopicId(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_GetPostByTopicId() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetPostByTopicId(::grpc::ServerContext* /*context*/, const ::weibo::GetPostByTopicIdReq* /*request*/, ::grpc::ServerWriter< ::weibo::PostRes>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedGetPostByTopicId(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::weibo::GetPostByTopicIdReq,::weibo::PostRes>* server_split_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithSplitStreamingMethod_GetPostByUserId : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_GetPostByUserId() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::weibo::GetPostByUserIdReq, ::weibo::PostRes>(
             [this](::grpc::ServerContext* context,
@@ -1120,7 +1905,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_PostFeedByRecommend() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::weibo::PostFeedReq, ::weibo::PostRes>(
             [this](::grpc::ServerContext* context,
@@ -1147,7 +1932,7 @@ class Weibo final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_PostFeedByFollow() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::weibo::PostFeedReq, ::weibo::PostRes>(
             [this](::grpc::ServerContext* context,
@@ -1168,8 +1953,8 @@ class Weibo final {
     // replace default version of method with split streamed
     virtual ::grpc::Status StreamedPostFeedByFollow(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::weibo::PostFeedReq,::weibo::PostRes>* server_split_streamer) = 0;
   };
-  typedef WithSplitStreamingMethod_GetHot<WithSplitStreamingMethod_GetPostByUserId<WithSplitStreamingMethod_PostFeedByRecommend<WithSplitStreamingMethod_PostFeedByFollow<Service > > > > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_Regist<WithStreamedUnaryMethod_Login<WithStreamedUnaryMethod_PublishPost<WithSplitStreamingMethod_GetHot<WithSplitStreamingMethod_GetPostByUserId<WithSplitStreamingMethod_PostFeedByRecommend<WithSplitStreamingMethod_PostFeedByFollow<Service > > > > > > > StreamedService;
+  typedef WithSplitStreamingMethod_GetHot<WithSplitStreamingMethod_GetHotTopic<WithSplitStreamingMethod_GetPostByTopicId<WithSplitStreamingMethod_GetPostByUserId<WithSplitStreamingMethod_PostFeedByRecommend<WithSplitStreamingMethod_PostFeedByFollow<Service > > > > > > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_Regist<WithStreamedUnaryMethod_Login<WithStreamedUnaryMethod_PublishPost<WithStreamedUnaryMethod_Follow<WithStreamedUnaryMethod_CommentOnPost<WithStreamedUnaryMethod_Like<WithSplitStreamingMethod_GetHot<WithSplitStreamingMethod_GetHotTopic<WithSplitStreamingMethod_GetPostByTopicId<WithSplitStreamingMethod_GetPostByUserId<WithSplitStreamingMethod_PostFeedByRecommend<WithSplitStreamingMethod_PostFeedByFollow<Service > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace weibo

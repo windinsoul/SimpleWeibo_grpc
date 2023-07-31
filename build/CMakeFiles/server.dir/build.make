@@ -95,6 +95,8 @@ server: CMakeFiles/server.dir/build.make
 server: /usr/local/lib/libprotobuf.a
 server: /usr/local/lib/libgrpc++.a
 server: libproto_share.a
+server: /usr/local/lib/libhiredis.so
+server: /usr/local/lib/libredis++.so
 server: /usr/local/lib/libprotobuf.a
 server: /usr/local/lib/libgrpc.a
 server: /usr/local/lib/libz.a

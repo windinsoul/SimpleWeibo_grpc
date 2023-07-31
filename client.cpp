@@ -13,6 +13,7 @@ using grpc::ClientContext;
 using grpc::ClientAsyncReader;
 using grpc::CompletionQueue;
 using grpc::Status;
+using grpc::ClientAsyncReaderWriter;
 
 using weibo::Weibo;
 using weibo::GetHotPostReq;
@@ -25,6 +26,14 @@ using weibo::GetPostByUserIdReq;
 using weibo::PostFeedReq;
 using weibo::PublishPostReq;
 using weibo::PublishPostRes;
+using weibo::FollowReq;
+using weibo::UserInfo;
+using weibo::Response;
+using weibo::CommentReq;
+using weibo::LikeReq;
+using weibo::HotTopicRes;
+using weibo::Blank;
+using weibo::GetPostByTopicIdReq;
 
 //class GetTieClient{
 //public:
@@ -66,6 +75,25 @@ public:
         AsyncGetHotCall* call=new AsyncGetHotCall(num);
         //创建一个读取流
         call->response_reader=stub_->PrepareAsyncGetHot(&call->context,request,&cq_);
+        call->response_reader->StartCall((void*)call);//开启读取流，一旦可读，就会加入到cq_中
+    }
+
+    void GetHotTopic(const uint32_t& num=20){
+        Blank request;
+
+        AsyncGetHotTopicCall* call=new AsyncGetHotTopicCall(num);
+        //创建一个读取流
+        call->response_reader=stub_->PrepareAsyncGetHotTopic(&call->context,request,&cq_);
+        call->response_reader->StartCall((void*)call);//开启读取流，一旦可读，就会加入到cq_中
+    }
+
+    void GetPostByTopicId(const int32_t& topic_id){
+        GetPostByTopicIdReq request;
+        request.set_topic_id(topic_id);
+
+        AsyncGetPostByTopicIdCall* call=new AsyncGetPostByTopicIdCall(topic_id);
+        //创建一个读取流
+        call->response_reader=stub_->PrepareAsyncGetPostByTopicId(&call->context,request,&cq_);
         call->response_reader->StartCall((void*)call);//开启读取流，一旦可读，就会加入到cq_中
     }
 
@@ -133,6 +161,39 @@ public:
         call->responseReader->Finish(&call->reply,&call->status,call);
     }
 
+    void Follow(const int& target_user_id){
+        FollowReq request;
+        request.set_target_user_id(target_user_id);
+        request.set_token(client_token);
+        AsyncFollowCall* call=new AsyncFollowCall(target_user_id);
+        call->context.AddMetadata("token",client_token);
+        call->responseReader=stub_->PrepareAsyncFollow(&call->context,request,&cq_);
+        call->responseReader->StartCall();
+        call->responseReader->Finish(&call->reply,&call->status,call);
+    }
+
+    void CommentOnPost(const std::string& comment_text,const int& post_id){
+        CommentReq request;
+        request.set_comment_text(comment_text);
+        request.set_post_id(post_id);
+        request.set_token(client_token);
+        AsyncCommentOnPostCall* call=new AsyncCommentOnPostCall();
+        call->context.AddMetadata("token",client_token);
+        call->responseReader=stub_->PrepareAsyncCommentOnPost(&call->context,request,&cq_);
+        call->responseReader->StartCall();
+        call->responseReader->Finish(&call->reply,&call->status,call);
+    }
+
+    void Like(const int& post_id){
+        LikeReq request;
+        request.set_post_id(post_id);
+        request.set_token(client_token);
+        AsyncLikeCall* call=new AsyncLikeCall();
+        call->context.AddMetadata("token",client_token);
+        call->responseReader=stub_->PrepareAsyncLike(&call->context,request,&cq_);
+        call->responseReader->StartCall();
+        call->responseReader->Finish(&call->reply,&call->status,call);
+    }
     //循环监听完成的response
     //输出服务器的response
     void AsyncCompleteRpc(){
@@ -198,6 +259,75 @@ private:
     public:
         int nums;
         int need;
+        PostRes reply;
+        std::unique_ptr<ClientAsyncReader<PostRes> > response_reader;
+    };
+
+    class AsyncGetHotTopicCall:public AsyncRpcCall{
+    public:
+        AsyncGetHotTopicCall(int num=20):nums(0),need(num){}
+//        void* GetResult()override{
+//            return (void*)(&reply);
+//        }
+
+        void Proceed()override{
+            if(status.ok()){
+                std::cout<<"GetHotTopic rpc stream fetched ended..."<<std::endl;
+                std::cout<<("\033[32mcall ok\033[0m\n")<<std::endl;
+                delete this;//读取完了，释放
+                return;
+            }
+            nums++;
+            if(nums>need){
+                status=Status::OK;
+                response_reader->Finish(&status,(void*)this);//向完成队列中加入终止读流事件
+                std::cout<<"GetHotTopic call,topic name: "<<reply.topic_name()<<std::endl;
+                std::cout<<"GetHotTopic call end..."<<std::endl;
+            }else{
+                if(nums>1){//1的时候才开始将读事件放入队列中
+                    std::cout<<"GetHot call,tie text: "<<reply.topic_name()<<std::endl;
+                }
+                response_reader->Read(&reply,(void*)this);//继续读下一帧
+            }
+        }
+    public:
+        int nums;
+        int need;
+        HotTopicRes reply;
+        std::unique_ptr<ClientAsyncReader<HotTopicRes> > response_reader;
+    };
+
+    class AsyncGetPostByTopicIdCall:public AsyncRpcCall{
+    public:
+        AsyncGetPostByTopicIdCall(int topicid):nums(0),need(20),topic_id(topicid){}
+//        void* GetResult()override{
+//            return (void*)(&reply);
+//        }
+
+        void Proceed()override{
+            if(status.ok()){
+                std::cout<<"GetPostByTopicId rpc stream fetched ended..."<<std::endl;
+                std::cout<<("\033[32mcall ok\033[0m\n")<<std::endl;
+                delete this;//读取完了，释放
+                return;
+            }
+            nums++;
+            if(nums>need){
+                status=Status::OK;
+                response_reader->Finish(&status,(void*)this);//向完成队列中加入终止读流事件
+                std::cout<<"GetPostByTopicId call,tie text: "<<reply.text()<<" author: "<<reply.author_name()<<std::endl;
+                std::cout<<"GetPostByTopicId call end..."<<std::endl;
+            }else{
+                if(nums>1){//1的时候才开始将读事件放入队列中
+                    std::cout<<"GetPostByTopicId call,tie text: "<<reply.text()<<" author: "<<reply.author_name()<<std::endl;
+                }
+                response_reader->Read(&reply,(void*)this);//继续读下一帧
+            }
+        }
+    public:
+        int nums;
+        int need;
+        int topic_id;
         PostRes reply;
         std::unique_ptr<ClientAsyncReader<PostRes> > response_reader;
     };
@@ -349,6 +479,7 @@ private:
         std::string password;
         LoginRes reply;
         std::unique_ptr<ClientAsyncResponseReader<LoginRes> > responseReader;
+
     };
 
     class AsyncPublishPostCall:public AsyncRpcCall{
@@ -370,6 +501,67 @@ private:
         std::string post_text;
         PublishPostRes reply;
         std::unique_ptr<ClientAsyncResponseReader<PublishPostRes> > responseReader;
+    };
+
+    class AsyncFollowCall:public AsyncRpcCall{
+    public:
+        AsyncFollowCall(const int& t_u_id)
+                :target_user_id(t_u_id){}
+
+        void Proceed()override{
+            if(reply.result_code()==0){
+                std::cout<<"Follow failed!"<<std::endl;
+            }else if(reply.result_code()==1){
+                std::cout<<"\033[32mFollow successfully\033[0m"<<std::endl;
+            }
+            std::cout<<("\033[32mcall ok\033[0m\n")<<std::endl;
+            delete this;
+            return;
+        }
+    public:
+        int target_user_id;
+        Response reply;
+        std::unique_ptr<ClientAsyncResponseReader<Response> > responseReader;
+    };
+
+    class AsyncCommentOnPostCall:public AsyncRpcCall{
+    public:
+        AsyncCommentOnPostCall()
+        {}
+
+        void Proceed()override{
+            if(reply.result_code()==0){
+                std::cout<<"CommentOnPost failed!"<<std::endl;
+            }else if(reply.result_code()==1){
+                std::cout<<"\033[32mCommentOnPost successfully\033[0m"<<std::endl;
+            }
+            std::cout<<("\033[32mcall ok\033[0m\n")<<std::endl;
+            delete this;
+            return;
+        }
+    public:
+        Response reply;
+        std::unique_ptr<ClientAsyncResponseReader<Response> > responseReader;
+    };
+
+    class AsyncLikeCall:public AsyncRpcCall{
+    public:
+        AsyncLikeCall()
+        {}
+
+        void Proceed()override{
+            if(reply.result_code()==0){
+                std::cout<<"Like failed!"<<std::endl;
+            }else if(reply.result_code()==1){
+                std::cout<<"\033[32mLike successfully\033[0m"<<std::endl;
+            }
+            std::cout<<("\033[32mcall ok\033[0m\n")<<std::endl;
+            delete this;
+            return;
+        }
+    public:
+        Response reply;
+        std::unique_ptr<ClientAsyncResponseReader<Response> > responseReader;
     };
 
     std::unique_ptr<Weibo::Stub> stub_;
@@ -406,8 +598,16 @@ int main(int argc,char** argv)
     std::string cmd;
     std::cout<<"Press control-c to quit\n"<<std::endl;
     while(std::cin>>cmd){
-        if(cmd=="Login")
-            client.Login("ink","123");
+        if(cmd=="Regist"){
+            std::string user_name,password;
+            std::cin>>user_name>>password;
+            client.Regist(user_name,password);
+        }
+        if(cmd=="Login") {
+            std::string user_name,password;
+            std::cin>>user_name>>password;
+            client.Login(user_name,password);
+        }
         if(cmd=="PostByFollow")
             client.PostFeedByFollow();
         if(cmd=="PostByRecommend")
@@ -418,6 +618,20 @@ int main(int argc,char** argv)
             std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
             client.PublishPost(std::string("hhh") + std::ctime(&now));
             std::cout<<ctime(&now);
+        }
+        if(cmd=="Follow"){
+            int target;
+            std::cin>>target;
+            client.Follow(target);
+        }
+        if(cmd=="CommentOnPost"){
+            client.CommentOnPost("love",1);
+        }
+        if(cmd=="GetHotTopic"){
+            client.GetHotTopic();
+        }
+        if(cmd=="GetPostByTopicId"){
+            client.GetPostByTopicId(1);
         }
     }
     thread_.join();// 阻塞

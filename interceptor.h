@@ -10,7 +10,8 @@ using weibo::Weibo;
 
 std::unordered_map<grpc::string ,bool> token_box;
 std::unordered_map<grpc::string ,bool> no_login={
-        {"/weibo.Weibo/Login",1},{"/weibo.Weibo/GetHot",1},{"/weibo.Weibo/PostFeedByRecommend",1},
+        {"/weibo.Weibo/Regist",1},{"/weibo.Weibo/Login",1},{"/weibo.Weibo/GetHot",1},{"/weibo.Weibo/PostFeedByRecommend",1},
+        {"/weibo.Weibo/GetHotTopic",1},{"/weibo.Weibo/GetPostByTopicId",1}
 };
 
 class IfLoginInterceptor:public grpc::experimental::Interceptor{
@@ -34,6 +35,7 @@ public:
             //后面记得改
 //            ok=true;
             if(ok){
+                //token续期
                 std::cout<<"用户验证成功"<<std::endl;
             }else{
                 std::cout<<"用户未登录, "<<info_->method()<<"请求不允许"<<std::endl;

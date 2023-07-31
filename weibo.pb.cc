@@ -21,6 +21,114 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace weibo {
+PROTOBUF_CONSTEXPR GetPostByTopicIdReq::GetPostByTopicIdReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.topic_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetPostByTopicIdReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetPostByTopicIdReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetPostByTopicIdReqDefaultTypeInternal() {}
+  union {
+    GetPostByTopicIdReq _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPostByTopicIdReqDefaultTypeInternal _GetPostByTopicIdReq_default_instance_;
+PROTOBUF_CONSTEXPR Blank::Blank(
+    ::_pbi::ConstantInitialized) {}
+struct BlankDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BlankDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BlankDefaultTypeInternal() {}
+  union {
+    Blank _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BlankDefaultTypeInternal _Blank_default_instance_;
+PROTOBUF_CONSTEXPR HotTopicRes::HotTopicRes(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.topic_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.topic_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct HotTopicResDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR HotTopicResDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~HotTopicResDefaultTypeInternal() {}
+  union {
+    HotTopicRes _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HotTopicResDefaultTypeInternal _HotTopicRes_default_instance_;
+PROTOBUF_CONSTEXPR LikeReq::LikeReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.post_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct LikeReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR LikeReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~LikeReqDefaultTypeInternal() {}
+  union {
+    LikeReq _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LikeReqDefaultTypeInternal _LikeReq_default_instance_;
+PROTOBUF_CONSTEXPR CommentReq::CommentReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.comment_text_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.post_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct CommentReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CommentReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CommentReqDefaultTypeInternal() {}
+  union {
+    CommentReq _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CommentReqDefaultTypeInternal _CommentReq_default_instance_;
+PROTOBUF_CONSTEXPR FollowReq::FollowReq(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.target_user_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct FollowReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FollowReqDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FollowReqDefaultTypeInternal() {}
+  union {
+    FollowReq _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FollowReqDefaultTypeInternal _FollowReq_default_instance_;
+PROTOBUF_CONSTEXPR UserInfo::UserInfo(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct UserInfoDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR UserInfoDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~UserInfoDefaultTypeInternal() {}
+  union {
+    UserInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UserInfoDefaultTypeInternal _UserInfo_default_instance_;
+PROTOBUF_CONSTEXPR Response::Response(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.info_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.result_code_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ResponseDefaultTypeInternal() {}
+  union {
+    Response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResponseDefaultTypeInternal _Response_default_instance_;
 PROTOBUF_CONSTEXPR PublishPostRes::PublishPostRes(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.result_code_)*/false
@@ -124,6 +232,7 @@ PROTOBUF_CONSTEXPR PostRes::PostRes(
     /*decltype(_impl_.text_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.author_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.publish_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.topic_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.post_id_)*/0u
   , /*decltype(_impl_.trans_nums_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
@@ -164,11 +273,72 @@ struct PostFeedReqDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PostFeedReqDefaultTypeInternal _PostFeedReq_default_instance_;
 }  // namespace weibo
-static ::_pb::Metadata file_level_metadata_weibo_2eproto[10];
+static ::_pb::Metadata file_level_metadata_weibo_2eproto[18];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_weibo_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_weibo_2eproto = nullptr;
 
 const uint32_t TableStruct_weibo_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::weibo::GetPostByTopicIdReq, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::weibo::GetPostByTopicIdReq, _impl_.topic_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::weibo::Blank, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::weibo::HotTopicRes, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::weibo::HotTopicRes, _impl_.topic_id_),
+  PROTOBUF_FIELD_OFFSET(::weibo::HotTopicRes, _impl_.topic_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::weibo::LikeReq, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::weibo::LikeReq, _impl_.token_),
+  PROTOBUF_FIELD_OFFSET(::weibo::LikeReq, _impl_.post_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::weibo::CommentReq, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::weibo::CommentReq, _impl_.token_),
+  PROTOBUF_FIELD_OFFSET(::weibo::CommentReq, _impl_.comment_text_),
+  PROTOBUF_FIELD_OFFSET(::weibo::CommentReq, _impl_.post_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::weibo::FollowReq, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::weibo::FollowReq, _impl_.token_),
+  PROTOBUF_FIELD_OFFSET(::weibo::FollowReq, _impl_.target_user_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::weibo::UserInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::weibo::UserInfo, _impl_.token_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::weibo::Response, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::weibo::Response, _impl_.result_code_),
+  PROTOBUF_FIELD_OFFSET(::weibo::Response, _impl_.info_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::weibo::PublishPostRes, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -236,6 +406,7 @@ const uint32_t TableStruct_weibo_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   PROTOBUF_FIELD_OFFSET(::weibo::PostRes, _impl_.author_name_),
   PROTOBUF_FIELD_OFFSET(::weibo::PostRes, _impl_.trans_nums_),
   PROTOBUF_FIELD_OFFSET(::weibo::PostRes, _impl_.publish_time_),
+  PROTOBUF_FIELD_OFFSET(::weibo::PostRes, _impl_.topic_name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::weibo::GetPostByUserIdReq, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -253,19 +424,35 @@ const uint32_t TableStruct_weibo_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   PROTOBUF_FIELD_OFFSET(::weibo::PostFeedReq, _impl_.token_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::weibo::PublishPostRes)},
-  { 7, -1, -1, sizeof(::weibo::PublishPostReq)},
-  { 15, -1, -1, sizeof(::weibo::RegistReq)},
-  { 23, -1, -1, sizeof(::weibo::RegistRes)},
-  { 32, -1, -1, sizeof(::weibo::LoginReq)},
-  { 40, -1, -1, sizeof(::weibo::LoginRes)},
-  { 49, -1, -1, sizeof(::weibo::GetHotPostReq)},
-  { 56, -1, -1, sizeof(::weibo::PostRes)},
-  { 67, -1, -1, sizeof(::weibo::GetPostByUserIdReq)},
-  { 74, -1, -1, sizeof(::weibo::PostFeedReq)},
+  { 0, -1, -1, sizeof(::weibo::GetPostByTopicIdReq)},
+  { 7, -1, -1, sizeof(::weibo::Blank)},
+  { 13, -1, -1, sizeof(::weibo::HotTopicRes)},
+  { 21, -1, -1, sizeof(::weibo::LikeReq)},
+  { 29, -1, -1, sizeof(::weibo::CommentReq)},
+  { 38, -1, -1, sizeof(::weibo::FollowReq)},
+  { 46, -1, -1, sizeof(::weibo::UserInfo)},
+  { 53, -1, -1, sizeof(::weibo::Response)},
+  { 61, -1, -1, sizeof(::weibo::PublishPostRes)},
+  { 68, -1, -1, sizeof(::weibo::PublishPostReq)},
+  { 76, -1, -1, sizeof(::weibo::RegistReq)},
+  { 84, -1, -1, sizeof(::weibo::RegistRes)},
+  { 93, -1, -1, sizeof(::weibo::LoginReq)},
+  { 101, -1, -1, sizeof(::weibo::LoginRes)},
+  { 110, -1, -1, sizeof(::weibo::GetHotPostReq)},
+  { 117, -1, -1, sizeof(::weibo::PostRes)},
+  { 129, -1, -1, sizeof(::weibo::GetPostByUserIdReq)},
+  { 136, -1, -1, sizeof(::weibo::PostFeedReq)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
+  &::weibo::_GetPostByTopicIdReq_default_instance_._instance,
+  &::weibo::_Blank_default_instance_._instance,
+  &::weibo::_HotTopicRes_default_instance_._instance,
+  &::weibo::_LikeReq_default_instance_._instance,
+  &::weibo::_CommentReq_default_instance_._instance,
+  &::weibo::_FollowReq_default_instance_._instance,
+  &::weibo::_UserInfo_default_instance_._instance,
+  &::weibo::_Response_default_instance_._instance,
   &::weibo::_PublishPostRes_default_instance_._instance,
   &::weibo::_PublishPostReq_default_instance_._instance,
   &::weibo::_RegistReq_default_instance_._instance,
@@ -279,38 +466,53 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_weibo_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\013weibo.proto\022\005weibo\"%\n\016PublishPostRes\022\023"
-  "\n\013result_code\030\001 \001(\010\"1\n\016PublishPostReq\022\r\n"
-  "\005token\030\001 \001(\t\022\020\n\010postText\030\002 \001(\t\"0\n\tRegist"
-  "Req\022\021\n\tuser_name\030\001 \001(\t\022\020\n\010password\030\002 \001(\t"
-  "\"D\n\tRegistRes\022\021\n\tuser_name\030\001 \001(\t\022\017\n\007user"
-  "_id\030\002 \001(\r\022\023\n\013result_code\030\003 \001(\r\"/\n\010LoginR"
-  "eq\022\021\n\tuser_name\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\""
-  "\?\n\010LoginRes\022\017\n\007user_id\030\001 \001(\r\022\023\n\013result_c"
-  "ode\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\"&\n\rGetHotPostRe"
-  "q\022\025\n\rpost_max_rank\030\001 \001(\r\"g\n\007PostRes\022\017\n\007p"
-  "ost_id\030\001 \001(\r\022\014\n\004text\030\002 \001(\t\022\023\n\013author_nam"
-  "e\030\003 \001(\t\022\022\n\ntrans_nums\030\004 \001(\005\022\024\n\014publish_t"
-  "ime\030\005 \001(\t\"%\n\022GetPostByUserIdReq\022\017\n\007user_"
+  "\n\013weibo.proto\022\005weibo\"\'\n\023GetPostByTopicId"
+  "Req\022\020\n\010topic_id\030\001 \001(\005\"\007\n\005Blank\"3\n\013HotTop"
+  "icRes\022\020\n\010topic_id\030\001 \001(\005\022\022\n\ntopic_name\030\002 "
+  "\001(\t\")\n\007LikeReq\022\r\n\005token\030\001 \001(\t\022\017\n\007post_id"
+  "\030\002 \001(\005\"B\n\nCommentReq\022\r\n\005token\030\001 \001(\t\022\024\n\014c"
+  "omment_text\030\002 \001(\t\022\017\n\007post_id\030\003 \001(\005\"2\n\tFo"
+  "llowReq\022\r\n\005token\030\001 \001(\t\022\026\n\016target_user_id"
+  "\030\002 \001(\005\"\031\n\010UserInfo\022\r\n\005token\030\001 \001(\t\"-\n\010Res"
+  "ponse\022\023\n\013result_code\030\001 \001(\010\022\014\n\004info\030\002 \001(\t"
+  "\"%\n\016PublishPostRes\022\023\n\013result_code\030\001 \001(\010\""
+  "1\n\016PublishPostReq\022\r\n\005token\030\001 \001(\t\022\020\n\010post"
+  "Text\030\002 \001(\t\"0\n\tRegistReq\022\021\n\tuser_name\030\001 \001"
+  "(\t\022\020\n\010password\030\002 \001(\t\"D\n\tRegistRes\022\021\n\tuse"
+  "r_name\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\r\022\023\n\013result_"
+  "code\030\003 \001(\r\"/\n\010LoginReq\022\021\n\tuser_name\030\001 \001("
+  "\t\022\020\n\010password\030\002 \001(\t\"\?\n\010LoginRes\022\017\n\007user_"
+  "id\030\001 \001(\r\022\023\n\013result_code\030\002 \001(\r\022\r\n\005token\030\003"
+  " \001(\t\"&\n\rGetHotPostReq\022\025\n\rpost_max_rank\030\001"
+  " \001(\r\"{\n\007PostRes\022\017\n\007post_id\030\001 \001(\r\022\014\n\004text"
+  "\030\002 \001(\t\022\023\n\013author_name\030\003 \001(\t\022\022\n\ntrans_num"
+  "s\030\004 \001(\005\022\024\n\014publish_time\030\005 \001(\t\022\022\n\ntopic_n"
+  "ame\030\006 \001(\t\"%\n\022GetPostByUserIdReq\022\017\n\007user_"
   "id\030\001 \001(\r\"9\n\013PostFeedReq\022\033\n\023each_flush_po"
-  "st_num\030\001 \001(\005\022\r\n\005token\030\002 \001(\t2\224\003\n\005Weibo\022.\n"
+  "st_num\030\001 \001(\005\022\r\n\005token\030\002 \001(\t2\236\005\n\005Weibo\022.\n"
   "\006Regist\022\020.weibo.RegistReq\032\020.weibo.Regist"
   "Res\"\000\022+\n\005Login\022\017.weibo.LoginReq\032\017.weibo."
   "LoginRes\"\000\022=\n\013PublishPost\022\025.weibo.Publis"
-  "hPostReq\032\025.weibo.PublishPostRes\"\000\0222\n\006Get"
-  "Hot\022\024.weibo.GetHotPostReq\032\016.weibo.PostRe"
-  "s\"\0000\001\022@\n\017GetPostByUserId\022\031.weibo.GetPost"
-  "ByUserIdReq\032\016.weibo.PostRes\"\0000\001\022=\n\023PostF"
-  "eedByRecommend\022\022.weibo.PostFeedReq\032\016.wei"
-  "bo.PostRes\"\0000\001\022:\n\020PostFeedByFollow\022\022.wei"
-  "bo.PostFeedReq\032\016.weibo.PostRes\"\0000\001b\006prot"
-  "o3"
+  "hPostReq\032\025.weibo.PublishPostRes\"\000\022-\n\006Fol"
+  "low\022\020.weibo.FollowReq\032\017.weibo.Response\"\000"
+  "\0225\n\rCommentOnPost\022\021.weibo.CommentReq\032\017.w"
+  "eibo.Response\"\000\022)\n\004Like\022\016.weibo.LikeReq\032"
+  "\017.weibo.Response\"\000\0222\n\006GetHot\022\024.weibo.Get"
+  "HotPostReq\032\016.weibo.PostRes\"\0000\001\0223\n\013GetHot"
+  "Topic\022\014.weibo.Blank\032\022.weibo.HotTopicRes\""
+  "\0000\001\022B\n\020GetPostByTopicId\022\032.weibo.GetPostB"
+  "yTopicIdReq\032\016.weibo.PostRes\"\0000\001\022@\n\017GetPo"
+  "stByUserId\022\031.weibo.GetPostByUserIdReq\032\016."
+  "weibo.PostRes\"\0000\001\022=\n\023PostFeedByRecommend"
+  "\022\022.weibo.PostFeedReq\032\016.weibo.PostRes\"\0000\001"
+  "\022:\n\020PostFeedByFollow\022\022.weibo.PostFeedReq"
+  "\032\016.weibo.PostRes\"\0000\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_weibo_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_weibo_2eproto = {
-    false, false, 1002, descriptor_table_protodef_weibo_2eproto,
+    false, false, 1628, descriptor_table_protodef_weibo_2eproto,
     "weibo.proto",
-    &descriptor_table_weibo_2eproto_once, nullptr, 0, 10,
+    &descriptor_table_weibo_2eproto_once, nullptr, 0, 18,
     schemas, file_default_instances, TableStruct_weibo_2eproto::offsets,
     file_level_metadata_weibo_2eproto, file_level_enum_descriptors_weibo_2eproto,
     file_level_service_descriptors_weibo_2eproto,
@@ -322,6 +524,1627 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_weibo_2e
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_weibo_2eproto(&descriptor_table_weibo_2eproto);
 namespace weibo {
+
+// ===================================================================
+
+class GetPostByTopicIdReq::_Internal {
+ public:
+};
+
+GetPostByTopicIdReq::GetPostByTopicIdReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:weibo.GetPostByTopicIdReq)
+}
+GetPostByTopicIdReq::GetPostByTopicIdReq(const GetPostByTopicIdReq& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPostByTopicIdReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.topic_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.topic_id_ = from._impl_.topic_id_;
+  // @@protoc_insertion_point(copy_constructor:weibo.GetPostByTopicIdReq)
+}
+
+inline void GetPostByTopicIdReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.topic_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetPostByTopicIdReq::~GetPostByTopicIdReq() {
+  // @@protoc_insertion_point(destructor:weibo.GetPostByTopicIdReq)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetPostByTopicIdReq::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetPostByTopicIdReq::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetPostByTopicIdReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:weibo.GetPostByTopicIdReq)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.topic_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetPostByTopicIdReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 topic_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.topic_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetPostByTopicIdReq::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:weibo.GetPostByTopicIdReq)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 topic_id = 1;
+  if (this->_internal_topic_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_topic_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:weibo.GetPostByTopicIdReq)
+  return target;
+}
+
+size_t GetPostByTopicIdReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:weibo.GetPostByTopicIdReq)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 topic_id = 1;
+  if (this->_internal_topic_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_topic_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPostByTopicIdReq::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetPostByTopicIdReq::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPostByTopicIdReq::GetClassData() const { return &_class_data_; }
+
+
+void GetPostByTopicIdReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetPostByTopicIdReq*>(&to_msg);
+  auto& from = static_cast<const GetPostByTopicIdReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:weibo.GetPostByTopicIdReq)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_topic_id() != 0) {
+    _this->_internal_set_topic_id(from._internal_topic_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetPostByTopicIdReq::CopyFrom(const GetPostByTopicIdReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:weibo.GetPostByTopicIdReq)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetPostByTopicIdReq::IsInitialized() const {
+  return true;
+}
+
+void GetPostByTopicIdReq::InternalSwap(GetPostByTopicIdReq* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.topic_id_, other->_impl_.topic_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetPostByTopicIdReq::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
+      file_level_metadata_weibo_2eproto[0]);
+}
+
+// ===================================================================
+
+class Blank::_Internal {
+ public:
+};
+
+Blank::Blank(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:weibo.Blank)
+}
+Blank::Blank(const Blank& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  Blank* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:weibo.Blank)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Blank::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Blank::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata Blank::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
+      file_level_metadata_weibo_2eproto[1]);
+}
+
+// ===================================================================
+
+class HotTopicRes::_Internal {
+ public:
+};
+
+HotTopicRes::HotTopicRes(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:weibo.HotTopicRes)
+}
+HotTopicRes::HotTopicRes(const HotTopicRes& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  HotTopicRes* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.topic_name_){}
+    , decltype(_impl_.topic_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic_name().empty()) {
+    _this->_impl_.topic_name_.Set(from._internal_topic_name(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.topic_id_ = from._impl_.topic_id_;
+  // @@protoc_insertion_point(copy_constructor:weibo.HotTopicRes)
+}
+
+inline void HotTopicRes::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.topic_name_){}
+    , decltype(_impl_.topic_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+HotTopicRes::~HotTopicRes() {
+  // @@protoc_insertion_point(destructor:weibo.HotTopicRes)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void HotTopicRes::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.topic_name_.Destroy();
+}
+
+void HotTopicRes::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void HotTopicRes::Clear() {
+// @@protoc_insertion_point(message_clear_start:weibo.HotTopicRes)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.topic_name_.ClearToEmpty();
+  _impl_.topic_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* HotTopicRes::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 topic_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.topic_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string topic_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_topic_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "weibo.HotTopicRes.topic_name"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* HotTopicRes::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:weibo.HotTopicRes)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 topic_id = 1;
+  if (this->_internal_topic_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_topic_id(), target);
+  }
+
+  // string topic_name = 2;
+  if (!this->_internal_topic_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic_name().data(), static_cast<int>(this->_internal_topic_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "weibo.HotTopicRes.topic_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_topic_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:weibo.HotTopicRes)
+  return target;
+}
+
+size_t HotTopicRes::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:weibo.HotTopicRes)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string topic_name = 2;
+  if (!this->_internal_topic_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic_name());
+  }
+
+  // int32 topic_id = 1;
+  if (this->_internal_topic_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_topic_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HotTopicRes::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    HotTopicRes::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HotTopicRes::GetClassData() const { return &_class_data_; }
+
+
+void HotTopicRes::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<HotTopicRes*>(&to_msg);
+  auto& from = static_cast<const HotTopicRes&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:weibo.HotTopicRes)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_topic_name().empty()) {
+    _this->_internal_set_topic_name(from._internal_topic_name());
+  }
+  if (from._internal_topic_id() != 0) {
+    _this->_internal_set_topic_id(from._internal_topic_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void HotTopicRes::CopyFrom(const HotTopicRes& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:weibo.HotTopicRes)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HotTopicRes::IsInitialized() const {
+  return true;
+}
+
+void HotTopicRes::InternalSwap(HotTopicRes* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.topic_name_, lhs_arena,
+      &other->_impl_.topic_name_, rhs_arena
+  );
+  swap(_impl_.topic_id_, other->_impl_.topic_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata HotTopicRes::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
+      file_level_metadata_weibo_2eproto[2]);
+}
+
+// ===================================================================
+
+class LikeReq::_Internal {
+ public:
+};
+
+LikeReq::LikeReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:weibo.LikeReq)
+}
+LikeReq::LikeReq(const LikeReq& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  LikeReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , decltype(_impl_.post_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token().empty()) {
+    _this->_impl_.token_.Set(from._internal_token(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.post_id_ = from._impl_.post_id_;
+  // @@protoc_insertion_point(copy_constructor:weibo.LikeReq)
+}
+
+inline void LikeReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , decltype(_impl_.post_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+LikeReq::~LikeReq() {
+  // @@protoc_insertion_point(destructor:weibo.LikeReq)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void LikeReq::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.token_.Destroy();
+}
+
+void LikeReq::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void LikeReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:weibo.LikeReq)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.token_.ClearToEmpty();
+  _impl_.post_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* LikeReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string token = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "weibo.LikeReq.token"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 post_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.post_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* LikeReq::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:weibo.LikeReq)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "weibo.LikeReq.token");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_token(), target);
+  }
+
+  // int32 post_id = 2;
+  if (this->_internal_post_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_post_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:weibo.LikeReq)
+  return target;
+}
+
+size_t LikeReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:weibo.LikeReq)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  // int32 post_id = 2;
+  if (this->_internal_post_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_post_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LikeReq::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    LikeReq::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LikeReq::GetClassData() const { return &_class_data_; }
+
+
+void LikeReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<LikeReq*>(&to_msg);
+  auto& from = static_cast<const LikeReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:weibo.LikeReq)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_token().empty()) {
+    _this->_internal_set_token(from._internal_token());
+  }
+  if (from._internal_post_id() != 0) {
+    _this->_internal_set_post_id(from._internal_post_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void LikeReq::CopyFrom(const LikeReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:weibo.LikeReq)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LikeReq::IsInitialized() const {
+  return true;
+}
+
+void LikeReq::InternalSwap(LikeReq* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.token_, lhs_arena,
+      &other->_impl_.token_, rhs_arena
+  );
+  swap(_impl_.post_id_, other->_impl_.post_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata LikeReq::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
+      file_level_metadata_weibo_2eproto[3]);
+}
+
+// ===================================================================
+
+class CommentReq::_Internal {
+ public:
+};
+
+CommentReq::CommentReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:weibo.CommentReq)
+}
+CommentReq::CommentReq(const CommentReq& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CommentReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , decltype(_impl_.comment_text_){}
+    , decltype(_impl_.post_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token().empty()) {
+    _this->_impl_.token_.Set(from._internal_token(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.comment_text_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.comment_text_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_comment_text().empty()) {
+    _this->_impl_.comment_text_.Set(from._internal_comment_text(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.post_id_ = from._impl_.post_id_;
+  // @@protoc_insertion_point(copy_constructor:weibo.CommentReq)
+}
+
+inline void CommentReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , decltype(_impl_.comment_text_){}
+    , decltype(_impl_.post_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.comment_text_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.comment_text_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+CommentReq::~CommentReq() {
+  // @@protoc_insertion_point(destructor:weibo.CommentReq)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CommentReq::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.token_.Destroy();
+  _impl_.comment_text_.Destroy();
+}
+
+void CommentReq::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CommentReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:weibo.CommentReq)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.token_.ClearToEmpty();
+  _impl_.comment_text_.ClearToEmpty();
+  _impl_.post_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CommentReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string token = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "weibo.CommentReq.token"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string comment_text = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_comment_text();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "weibo.CommentReq.comment_text"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 post_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.post_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CommentReq::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:weibo.CommentReq)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "weibo.CommentReq.token");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_token(), target);
+  }
+
+  // string comment_text = 2;
+  if (!this->_internal_comment_text().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_comment_text().data(), static_cast<int>(this->_internal_comment_text().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "weibo.CommentReq.comment_text");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_comment_text(), target);
+  }
+
+  // int32 post_id = 3;
+  if (this->_internal_post_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_post_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:weibo.CommentReq)
+  return target;
+}
+
+size_t CommentReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:weibo.CommentReq)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  // string comment_text = 2;
+  if (!this->_internal_comment_text().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_comment_text());
+  }
+
+  // int32 post_id = 3;
+  if (this->_internal_post_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_post_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CommentReq::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CommentReq::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CommentReq::GetClassData() const { return &_class_data_; }
+
+
+void CommentReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CommentReq*>(&to_msg);
+  auto& from = static_cast<const CommentReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:weibo.CommentReq)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_token().empty()) {
+    _this->_internal_set_token(from._internal_token());
+  }
+  if (!from._internal_comment_text().empty()) {
+    _this->_internal_set_comment_text(from._internal_comment_text());
+  }
+  if (from._internal_post_id() != 0) {
+    _this->_internal_set_post_id(from._internal_post_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CommentReq::CopyFrom(const CommentReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:weibo.CommentReq)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CommentReq::IsInitialized() const {
+  return true;
+}
+
+void CommentReq::InternalSwap(CommentReq* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.token_, lhs_arena,
+      &other->_impl_.token_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.comment_text_, lhs_arena,
+      &other->_impl_.comment_text_, rhs_arena
+  );
+  swap(_impl_.post_id_, other->_impl_.post_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CommentReq::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
+      file_level_metadata_weibo_2eproto[4]);
+}
+
+// ===================================================================
+
+class FollowReq::_Internal {
+ public:
+};
+
+FollowReq::FollowReq(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:weibo.FollowReq)
+}
+FollowReq::FollowReq(const FollowReq& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  FollowReq* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , decltype(_impl_.target_user_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token().empty()) {
+    _this->_impl_.token_.Set(from._internal_token(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.target_user_id_ = from._impl_.target_user_id_;
+  // @@protoc_insertion_point(copy_constructor:weibo.FollowReq)
+}
+
+inline void FollowReq::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , decltype(_impl_.target_user_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+FollowReq::~FollowReq() {
+  // @@protoc_insertion_point(destructor:weibo.FollowReq)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FollowReq::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.token_.Destroy();
+}
+
+void FollowReq::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void FollowReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:weibo.FollowReq)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.token_.ClearToEmpty();
+  _impl_.target_user_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FollowReq::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string token = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "weibo.FollowReq.token"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 target_user_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.target_user_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FollowReq::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:weibo.FollowReq)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "weibo.FollowReq.token");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_token(), target);
+  }
+
+  // int32 target_user_id = 2;
+  if (this->_internal_target_user_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_target_user_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:weibo.FollowReq)
+  return target;
+}
+
+size_t FollowReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:weibo.FollowReq)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  // int32 target_user_id = 2;
+  if (this->_internal_target_user_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_target_user_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FollowReq::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    FollowReq::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FollowReq::GetClassData() const { return &_class_data_; }
+
+
+void FollowReq::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<FollowReq*>(&to_msg);
+  auto& from = static_cast<const FollowReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:weibo.FollowReq)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_token().empty()) {
+    _this->_internal_set_token(from._internal_token());
+  }
+  if (from._internal_target_user_id() != 0) {
+    _this->_internal_set_target_user_id(from._internal_target_user_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FollowReq::CopyFrom(const FollowReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:weibo.FollowReq)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FollowReq::IsInitialized() const {
+  return true;
+}
+
+void FollowReq::InternalSwap(FollowReq* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.token_, lhs_arena,
+      &other->_impl_.token_, rhs_arena
+  );
+  swap(_impl_.target_user_id_, other->_impl_.target_user_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FollowReq::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
+      file_level_metadata_weibo_2eproto[5]);
+}
+
+// ===================================================================
+
+class UserInfo::_Internal {
+ public:
+};
+
+UserInfo::UserInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:weibo.UserInfo)
+}
+UserInfo::UserInfo(const UserInfo& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  UserInfo* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token().empty()) {
+    _this->_impl_.token_.Set(from._internal_token(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:weibo.UserInfo)
+}
+
+inline void UserInfo::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.token_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+UserInfo::~UserInfo() {
+  // @@protoc_insertion_point(destructor:weibo.UserInfo)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void UserInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.token_.Destroy();
+}
+
+void UserInfo::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void UserInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:weibo.UserInfo)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.token_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string token = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "weibo.UserInfo.token"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* UserInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:weibo.UserInfo)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "weibo.UserInfo.token");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_token(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:weibo.UserInfo)
+  return target;
+}
+
+size_t UserInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:weibo.UserInfo)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UserInfo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    UserInfo::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UserInfo::GetClassData() const { return &_class_data_; }
+
+
+void UserInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<UserInfo*>(&to_msg);
+  auto& from = static_cast<const UserInfo&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:weibo.UserInfo)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_token().empty()) {
+    _this->_internal_set_token(from._internal_token());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UserInfo::CopyFrom(const UserInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:weibo.UserInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UserInfo::IsInitialized() const {
+  return true;
+}
+
+void UserInfo::InternalSwap(UserInfo* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.token_, lhs_arena,
+      &other->_impl_.token_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UserInfo::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
+      file_level_metadata_weibo_2eproto[6]);
+}
+
+// ===================================================================
+
+class Response::_Internal {
+ public:
+};
+
+Response::Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:weibo.Response)
+}
+Response::Response(const Response& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.info_){}
+    , decltype(_impl_.result_code_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.info_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.info_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_info().empty()) {
+    _this->_impl_.info_.Set(from._internal_info(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.result_code_ = from._impl_.result_code_;
+  // @@protoc_insertion_point(copy_constructor:weibo.Response)
+}
+
+inline void Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.info_){}
+    , decltype(_impl_.result_code_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.info_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.info_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+Response::~Response() {
+  // @@protoc_insertion_point(destructor:weibo.Response)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Response::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.info_.Destroy();
+}
+
+void Response::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Response::Clear() {
+// @@protoc_insertion_point(message_clear_start:weibo.Response)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.info_.ClearToEmpty();
+  _impl_.result_code_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Response::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool result_code = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.result_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string info = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_info();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "weibo.Response.info"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Response::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:weibo.Response)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool result_code = 1;
+  if (this->_internal_result_code() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_result_code(), target);
+  }
+
+  // string info = 2;
+  if (!this->_internal_info().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_info().data(), static_cast<int>(this->_internal_info().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "weibo.Response.info");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_info(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:weibo.Response)
+  return target;
+}
+
+size_t Response::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:weibo.Response)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string info = 2;
+  if (!this->_internal_info().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_info());
+  }
+
+  // bool result_code = 1;
+  if (this->_internal_result_code() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Response::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Response::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Response::GetClassData() const { return &_class_data_; }
+
+
+void Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Response*>(&to_msg);
+  auto& from = static_cast<const Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:weibo.Response)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_info().empty()) {
+    _this->_internal_set_info(from._internal_info());
+  }
+  if (from._internal_result_code() != 0) {
+    _this->_internal_set_result_code(from._internal_result_code());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Response::CopyFrom(const Response& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:weibo.Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Response::IsInitialized() const {
+  return true;
+}
+
+void Response::InternalSwap(Response* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.info_, lhs_arena,
+      &other->_impl_.info_, rhs_arena
+  );
+  swap(_impl_.result_code_, other->_impl_.result_code_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Response::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
+      file_level_metadata_weibo_2eproto[7]);
+}
 
 // ===================================================================
 
@@ -498,7 +2321,7 @@ void PublishPostRes::InternalSwap(PublishPostRes* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PublishPostRes::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[0]);
+      file_level_metadata_weibo_2eproto[8]);
 }
 
 // ===================================================================
@@ -751,7 +2574,7 @@ void PublishPostReq::InternalSwap(PublishPostReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PublishPostReq::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[1]);
+      file_level_metadata_weibo_2eproto[9]);
 }
 
 // ===================================================================
@@ -1004,7 +2827,7 @@ void RegistReq::InternalSwap(RegistReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RegistReq::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[2]);
+      file_level_metadata_weibo_2eproto[10]);
 }
 
 // ===================================================================
@@ -1267,7 +3090,7 @@ void RegistRes::InternalSwap(RegistRes* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RegistRes::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[3]);
+      file_level_metadata_weibo_2eproto[11]);
 }
 
 // ===================================================================
@@ -1520,7 +3343,7 @@ void LoginReq::InternalSwap(LoginReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata LoginReq::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[4]);
+      file_level_metadata_weibo_2eproto[12]);
 }
 
 // ===================================================================
@@ -1783,7 +3606,7 @@ void LoginRes::InternalSwap(LoginRes* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata LoginRes::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[5]);
+      file_level_metadata_weibo_2eproto[13]);
 }
 
 // ===================================================================
@@ -1961,7 +3784,7 @@ void GetHotPostReq::InternalSwap(GetHotPostReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetHotPostReq::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[6]);
+      file_level_metadata_weibo_2eproto[14]);
 }
 
 // ===================================================================
@@ -1983,6 +3806,7 @@ PostRes::PostRes(const PostRes& from)
       decltype(_impl_.text_){}
     , decltype(_impl_.author_name_){}
     , decltype(_impl_.publish_time_){}
+    , decltype(_impl_.topic_name_){}
     , decltype(_impl_.post_id_){}
     , decltype(_impl_.trans_nums_){}
     , /*decltype(_impl_._cached_size_)*/{}};
@@ -2012,6 +3836,14 @@ PostRes::PostRes(const PostRes& from)
     _this->_impl_.publish_time_.Set(from._internal_publish_time(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.topic_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_topic_name().empty()) {
+    _this->_impl_.topic_name_.Set(from._internal_topic_name(), 
+      _this->GetArenaForAllocation());
+  }
   ::memcpy(&_impl_.post_id_, &from._impl_.post_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.trans_nums_) -
     reinterpret_cast<char*>(&_impl_.post_id_)) + sizeof(_impl_.trans_nums_));
@@ -2026,6 +3858,7 @@ inline void PostRes::SharedCtor(
       decltype(_impl_.text_){}
     , decltype(_impl_.author_name_){}
     , decltype(_impl_.publish_time_){}
+    , decltype(_impl_.topic_name_){}
     , decltype(_impl_.post_id_){0u}
     , decltype(_impl_.trans_nums_){0}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -2041,6 +3874,10 @@ inline void PostRes::SharedCtor(
   _impl_.publish_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.publish_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.topic_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.topic_name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -2058,6 +3895,7 @@ inline void PostRes::SharedDtor() {
   _impl_.text_.Destroy();
   _impl_.author_name_.Destroy();
   _impl_.publish_time_.Destroy();
+  _impl_.topic_name_.Destroy();
 }
 
 void PostRes::SetCachedSize(int size) const {
@@ -2073,6 +3911,7 @@ void PostRes::Clear() {
   _impl_.text_.ClearToEmpty();
   _impl_.author_name_.ClearToEmpty();
   _impl_.publish_time_.ClearToEmpty();
+  _impl_.topic_name_.ClearToEmpty();
   ::memset(&_impl_.post_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.trans_nums_) -
       reinterpret_cast<char*>(&_impl_.post_id_)) + sizeof(_impl_.trans_nums_));
@@ -2128,6 +3967,16 @@ const char* PostRes::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "weibo.PostRes.publish_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string topic_name = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          auto str = _internal_mutable_topic_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "weibo.PostRes.topic_name"));
         } else
           goto handle_unusual;
         continue;
@@ -2202,6 +4051,16 @@ uint8_t* PostRes::_InternalSerialize(
         5, this->_internal_publish_time(), target);
   }
 
+  // string topic_name = 6;
+  if (!this->_internal_topic_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_topic_name().data(), static_cast<int>(this->_internal_topic_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "weibo.PostRes.topic_name");
+    target = stream->WriteStringMaybeAliased(
+        6, this->_internal_topic_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2237,6 +4096,13 @@ size_t PostRes::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_publish_time());
+  }
+
+  // string topic_name = 6;
+  if (!this->_internal_topic_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_topic_name());
   }
 
   // uint32 post_id = 1;
@@ -2276,6 +4142,9 @@ void PostRes::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOB
   if (!from._internal_publish_time().empty()) {
     _this->_internal_set_publish_time(from._internal_publish_time());
   }
+  if (!from._internal_topic_name().empty()) {
+    _this->_internal_set_topic_name(from._internal_topic_name());
+  }
   if (from._internal_post_id() != 0) {
     _this->_internal_set_post_id(from._internal_post_id());
   }
@@ -2313,6 +4182,10 @@ void PostRes::InternalSwap(PostRes* other) {
       &_impl_.publish_time_, lhs_arena,
       &other->_impl_.publish_time_, rhs_arena
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.topic_name_, lhs_arena,
+      &other->_impl_.topic_name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(PostRes, _impl_.trans_nums_)
       + sizeof(PostRes::_impl_.trans_nums_)
@@ -2324,7 +4197,7 @@ void PostRes::InternalSwap(PostRes* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PostRes::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[7]);
+      file_level_metadata_weibo_2eproto[15]);
 }
 
 // ===================================================================
@@ -2502,7 +4375,7 @@ void GetPostByUserIdReq::InternalSwap(GetPostByUserIdReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetPostByUserIdReq::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[8]);
+      file_level_metadata_weibo_2eproto[16]);
 }
 
 // ===================================================================
@@ -2732,12 +4605,44 @@ void PostFeedReq::InternalSwap(PostFeedReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PostFeedReq::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_weibo_2eproto_getter, &descriptor_table_weibo_2eproto_once,
-      file_level_metadata_weibo_2eproto[9]);
+      file_level_metadata_weibo_2eproto[17]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace weibo
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::weibo::GetPostByTopicIdReq*
+Arena::CreateMaybeMessage< ::weibo::GetPostByTopicIdReq >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::weibo::GetPostByTopicIdReq >(arena);
+}
+template<> PROTOBUF_NOINLINE ::weibo::Blank*
+Arena::CreateMaybeMessage< ::weibo::Blank >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::weibo::Blank >(arena);
+}
+template<> PROTOBUF_NOINLINE ::weibo::HotTopicRes*
+Arena::CreateMaybeMessage< ::weibo::HotTopicRes >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::weibo::HotTopicRes >(arena);
+}
+template<> PROTOBUF_NOINLINE ::weibo::LikeReq*
+Arena::CreateMaybeMessage< ::weibo::LikeReq >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::weibo::LikeReq >(arena);
+}
+template<> PROTOBUF_NOINLINE ::weibo::CommentReq*
+Arena::CreateMaybeMessage< ::weibo::CommentReq >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::weibo::CommentReq >(arena);
+}
+template<> PROTOBUF_NOINLINE ::weibo::FollowReq*
+Arena::CreateMaybeMessage< ::weibo::FollowReq >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::weibo::FollowReq >(arena);
+}
+template<> PROTOBUF_NOINLINE ::weibo::UserInfo*
+Arena::CreateMaybeMessage< ::weibo::UserInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::weibo::UserInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::weibo::Response*
+Arena::CreateMaybeMessage< ::weibo::Response >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::weibo::Response >(arena);
+}
 template<> PROTOBUF_NOINLINE ::weibo::PublishPostRes*
 Arena::CreateMaybeMessage< ::weibo::PublishPostRes >(Arena* arena) {
   return Arena::CreateMessageInternal< ::weibo::PublishPostRes >(arena);

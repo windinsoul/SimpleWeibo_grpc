@@ -209,6 +209,15 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//The directory containing a CMake configuration file for CppKafka.
+CppKafka_DIR:PATH=CppKafka_DIR-NOTFOUND
+
+//Path to a file.
+HIREDIS_HEADER:PATH=/usr/local/include
+
+//Path to a library.
+HIREDIS_LIB:FILEPATH=/usr/local/lib/libhiredis.so
+
 //Path to a file.
 Protobuf_INCLUDE_DIR:PATH=/usr/local/include
 
@@ -232,6 +241,12 @@ Protobuf_PROTOC_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libprotoc.a
 
 //Path to a library.
 Protobuf_PROTOC_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libprotoc.a
+
+//Path to a file.
+REDIS_PLUS_PLUS_HEADER:PATH=/usr/local/include
+
+//Path to a library.
+REDIS_PLUS_PLUS_LIB:FILEPATH=/usr/local/lib/libredis++.so
 
 //Value Computed by CMake
 SimpleWeibo_grpc_BINARY_DIR:STATIC=/home/windinsoul/CLionProjects/SimpleWeibo_grpc/build

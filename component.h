@@ -21,3 +21,11 @@ std::string CalculateMD5(const std::string& input){
     return ss.str();
 }
 
+long long GetNowTimeStamp(){
+    // 获取当前时间戳
+    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+
+    // 将时间戳转换为整数表示
+    std::chrono::system_clock::duration dur = now.time_since_epoch();
+    return std::chrono::duration_cast<std::chrono::seconds>(dur).count();
+}
