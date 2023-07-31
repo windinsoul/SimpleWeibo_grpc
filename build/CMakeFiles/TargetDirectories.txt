@@ -1,5 +1,0 @@
-/home/windinsoul/CLionProjects/SimpleWeibo_grpc/build/CMakeFiles/proto_share.dir
-/home/windinsoul/CLionProjects/SimpleWeibo_grpc/build/CMakeFiles/server.dir
-/home/windinsoul/CLionProjects/SimpleWeibo_grpc/build/CMakeFiles/client.dir
-/home/windinsoul/CLionProjects/SimpleWeibo_grpc/build/CMakeFiles/edit_cache.dir
-/home/windinsoul/CLionProjects/SimpleWeibo_grpc/build/CMakeFiles/rebuild_cache.dir

@@ -1,2 +1,4 @@
 *.pb*
 cmake-build-debug/
+build/
+.idea/

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libproto_share.a CMakeFiles/proto_share.dir/weibo.grpc.pb.cc.o CMakeFiles/proto_share.dir/weibo.pb.cc.o
-/usr/bin/ranlib libproto_share.a
